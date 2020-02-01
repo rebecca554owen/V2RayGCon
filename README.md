@@ -1,0 +1,5 @@
+Manual
+ 
+```bash
+$ hugo server
+```
