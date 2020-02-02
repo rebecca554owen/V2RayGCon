@@ -5,7 +5,7 @@ draft: false
 weight: 3
 ---
 
-在“选项”窗口中有个“打开自启动文件夹”小按钮
+在“选项”窗口中有个打开“自启动文件夹”小按钮
 {{< figure src="../../images/forms/form_option_autorun.png" >}}
 
 然后拖个快捷方式进去就完成了
