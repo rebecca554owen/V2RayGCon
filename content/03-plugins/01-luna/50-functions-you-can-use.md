@@ -5,7 +5,7 @@ draft: false
 weight: 50
 ---
 
-前面的示例脚本中像`Signal:Stop()`这样的语句，实际是调用了[ILuaSignal.cs][1]里面的`bool Stop();`。[Interfaces.Lua][2]目录里面的所有接口都可以像上面那样调用。例如：`Misc:Sleep(1000)`。
+前面的示例脚本中像`Signal:Stop()`这样的语句，实际是调用了[ILuaSignal.cs][1]里面的`bool Stop();`[Interfaces.Lua][2]目录里面的所有接口都可以像上面那样调用。例如：`Misc:Sleep(1000)`
 
 控制服务器的脚本，通常需要先调用`Server:GetAllServers()`函数。  
 下面是一个选中所有ws.tls服务器的小脚本：  
