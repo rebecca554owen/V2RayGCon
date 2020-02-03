@@ -2,7 +2,7 @@
 title: "更新v2ray-core"
 date: 2020-02-01T17:39:27+08:00
 draft: false
-weight: 4
+weight: 14
 ---
 
 点主窗口的“关于”菜单下有个“下载v2ray-core”菜单项

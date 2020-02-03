@@ -2,7 +2,7 @@
 title: "全局Import"
 date: 2020-02-02T22:45:44+08:00
 draft: false
-weight: 7
+weight: 17
 ---
 
 这个功能用于合并多个配置文件，在“选项”窗口中设置。  
