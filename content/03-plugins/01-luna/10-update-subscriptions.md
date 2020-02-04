@@ -10,8 +10,7 @@ weight: 10
 local updateInterval = 1 
 
 -- 代码
-local Set = require "lua.modules.set"
-local TimestampKey = "LastUpdateSubscriptionsTimestamp"
+local TimestampKey = "TimestampOfLastSubscriptionUpdate"
 local SecPerDay = 24 * 60 * 60
 local TimeZone8 = 8 * 60 * 60
 
