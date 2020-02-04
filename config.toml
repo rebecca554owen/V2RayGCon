@@ -33,7 +33,7 @@ enableMissingTranslationPlaceholders = false
     # Souce Code repository section
     # description = "v2ray-core的windows图形客户端"
     github_repository = "https://github.com/vrnobody/V2RayGCon"
-    version = "1.2.7.7"
+    version = "1.2.8.0"
 
     # Documentation repository section
     # documentation repository (set edit link to documentation repository)

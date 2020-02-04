@@ -5,6 +5,13 @@ draft: false
 weight: 1
 ---
 
+##### `v1.2.8.0`
+更新各Nuget包  
+修复lua/templates文件夹为空的问题  
+修复订阅选项页有时会崩溃的问题  
+修复主窗口聚焦问题  
+默认启用ProxySetter插件  
+
 ##### `v1.2.7.7`
 vee链接支持v2ray/discussion [#513](https://github.com/v2ray/discussion/issues/513) 中提出的socks outbound（测试中）
 
