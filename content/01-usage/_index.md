@@ -18,6 +18,8 @@ weight: 1
  * 紫色表示当前系统代理为PAC模式
  * 蓝色表示当前系统代理为全局模式
 
+注：启用ProxySetter插件后才可以切换代理模式
+
 ##### 托盘菜单演示
 {{< figure src="../images/systray/menu_servers.png" >}}
 

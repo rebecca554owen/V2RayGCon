@@ -48,7 +48,7 @@ function Str2Num(str)
     if str == nil or str == '' then
         return 0
     end
-    return tostring(str)
+    return tonumber(str)
 end
 
 Main()
