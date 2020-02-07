@@ -1,9 +1,12 @@
 ---
-title: "搜索"
+title: "搜索及编辑"
 date: 2020-02-01T16:40:46+08:00
 draft: false
 weight: 11
 ---
 
 搜索功能演示
-{{< figure src="../../images/forms/demo_search_v1.2.2.gif" >}}
+{{< figure src="../../images/forms/demo_search_v1.2.8.4.gif" >}}
+
+编辑功能演示
+{{< figure src="../../images/forms/demo_editor_v1.2.8.4.gif" >}}

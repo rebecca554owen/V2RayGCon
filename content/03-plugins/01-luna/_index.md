@@ -13,14 +13,16 @@ weight: 1
 ##### 使用Signal响应停止按钮
 {{< figure src="../../images/luna/luna_v0.1.0_signal_demo.gif" >}}
 
-##### 通过脚本控制主窗口
-{{< figure src="../../images/luna/luna_v0.1.0_folding_demo.gif" >}}
+##### 修改服务器标记
+{{< figure src="../../images/luna/demo_setmark_v1.2.8.4.gif" >}}
 脚本源码如下：
 ```lua
-local coreServs = Server:GetAllServers()
-for coreServ in Each(coreServs) do
-    local coreState = coreServ:GetCoreStates()
-    local folding = coreState:GetFoldingState()
-    coreState:SetFoldingState((folding + 1) % 2)
+local coreServ = Server:GetAllServers()[0]
+local coreState = coreServ:GetCoreStates()
+local counter = 0
+while not Signal:Stop() do
+    counter = counter + 1
+    coreState:SetMark(tostring(counter))
+    Misc:Sleep(1000)
 end
 ```

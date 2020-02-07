@@ -9,7 +9,7 @@ V2RayGCon是[v2ray-core][1]的第三方windows图形客户端。它除了支持�
 [\[项目主页\]][4] [\[下载地址\]][2] [\[问题反馈\]][3] [\[本手册项目主页\]][5]  
 
 ##### 简要用法演示
-{{< figure src="images/forms/demo_basics_v1.1.10.gif" >}}
+{{< figure src="images/forms/demo_basics_v1.2.8.4.gif" >}}
 
 [1]: https://github.com/v2ray/v2ray-core "v2ray/v2ray-core"
 [2]: https://github.com/vrnobody/V2RayGCon/releases/latest "Releases"
