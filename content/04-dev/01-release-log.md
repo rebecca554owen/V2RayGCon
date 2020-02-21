@@ -5,6 +5,10 @@ draft: false
 weight: 1
 ---
 
+##### `v1.2.9.0`
+界面少量调整  
+修改lua/libs/utils.lua  
+
 ##### `v1.2.8.7`
 `v://...`分享链接支持http协议  
 
