@@ -5,7 +5,7 @@ draft: false
 weight: 2
 ---
 
-V2RayGCon `v1.2.9.2+`才可以运行以下脚本
+需要V2RayGCon `v1.2.9.2`或以后版本
 ```lua
 -- 图片下载到以下位置(目录必须可写，注意斜杠方向)
 imageFilename = "d:/wallpaper.jpg"
