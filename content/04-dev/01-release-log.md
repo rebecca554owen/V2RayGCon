@@ -5,6 +5,9 @@ draft: false
 weight: 1
 ---
 
+##### `v1.2.9.3`
+luna插件添加Input，Choices等几个输入控件  
+
 ##### `v1.2.9.0`
 界面少量调整  
 修改lua/libs/utils.lua  
