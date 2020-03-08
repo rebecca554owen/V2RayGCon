@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.3.0.0`
+Luna插件的Input控件可设定初值  
+修复一个导致菜单冻住的bug  
+修复中文tag乱码问题  
+
 ##### `v1.2.9.3`
 luna插件添加Input，Choices等几个输入控件  
 
