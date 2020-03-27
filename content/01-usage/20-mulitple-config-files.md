@@ -1,11 +1,11 @@
 ---
-title: "多个配置文件"
+title: "多文件配置"
 date: 2020-02-02T22:45:44+08:00
 draft: false
 weight: 20
 ---
 
-V2RayGCon `v1.3.1.3+`开始支持v2ray-core `v4.23.1`新增的多配置文件功能。  
+V2RayGCon `v1.3.1.3+`开始支持v2ray-core `v4.23.1`新增的多文件配置功能。  
 
 用法和[全局import](https://vrnobody.github.io/V2RayGCon/01-usage/17-global-import/)相近，在`选项`窗口的`多配置文件`分页中设定常用的配置文件路径（必须是完整的绝对路径）。然后就可以在`配置编辑器`里面把这些设定插入到`config.json`的`v2raygcon.configs`分节。  
 
