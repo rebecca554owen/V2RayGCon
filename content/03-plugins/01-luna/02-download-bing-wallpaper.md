@@ -5,7 +5,8 @@ draft: false
 weight: 2
 ---
 
-需要V2RayGCon `v1.2.9.2`或以后版本
+需要V2RayGCon `v1.3.4.2`或以后版本。
+如果使用`v1.3.4.1`或更早版本需要修改第24行。
 ```lua
 -- 图片下载到以下位置(目录必须可写，注意斜杠方向)
 imageFilename = "d:/wallpaper.jpg"
@@ -28,7 +29,13 @@ end
 index = Misc:Choice("请选择壁纸(点取消结束脚本):", keys, true)
 assert(index > 0)
 Web:Download(bingUrl .. values[index], imageFilename)
-Misc:SetWallpaper(imageFilename)
+
+-- v1.3.4.2+
+Sys:SetWallpaper(imageFilename)
+
+-- v1.3.4.1-
+-- Misc:SetWallpaper(imageFilename)
+
 print("完成")
 ```
 
