@@ -7,15 +7,26 @@ weight: 5
 
 需要V2RayGCon `v1.3.4.4`或以后版本
 
-调用外部程序示例
+##### `Sys:Run()`用法示例
+假设`trojan.exe`位于`V2RayGCon/trojan/`文件夹中。
 ```lua
-stdin = "ping 8.8.8.8 -t"
-proc = Sys:Run("cmd.exe", nil, stdin)
-Sys:WaitForExit(proc)
+-- 设定文件位置
+local trojan = "trojan/trojan.exe"
+local args = "-c trojan/config.json"
+
+-- 代码
+local proc = Sys:Run(trojan, args, nil, nil, false, true)
+while not Signal:Stop() and not Sys:HasExited(proc) do
+    Misc:Sleep(1000)
+end
+if not Sys:HasExited(proc) then
+    Sys:SendStopSignal(proc)
+    Sys:WaitForExit(proc)
+end
 ```
 
-
-互发信件示例（开2个窗口，同时运行以下脚本）
+##### `MailBox`用法示例
+开2个窗口，同时运行以下脚本
 ```lua
 local from = "Alex"
 local to = "Bob"
@@ -38,5 +49,4 @@ repeat
     end
 until mail == nil
 ```
-小朋友，你是否有很多问号？  
-这个功能大概可以用来写些c/s结构的脚本（们）。  
+小朋友，你是否有很多问号？这个`MailBox`有什么用呢？   
