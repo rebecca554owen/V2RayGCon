@@ -9,6 +9,9 @@ weight: 10
 -- 设定更新间隔（单位:天）
 local updateInterval = 1 
 
+-- 每10分钟看下时间到没到
+local wakeupInterval = 10
+
 -- 代码
 local TimestampKey = "TimestampOfLastSubscriptionUpdate"
 local SecPerDay = 24 * 60 * 60
@@ -51,6 +54,10 @@ function Str2Num(str)
     return tonumber(str)
 end
 
-Main()
+local wakeupMilSec = wakeupInterval * 60 * 1000
+while true do
+    Misc:Sleep(wakeupMilSec)
+    Main()
+end
 ```
 记得在“概况”页面钩上“自启动”哦！

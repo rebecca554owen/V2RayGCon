@@ -5,7 +5,7 @@ draft: false
 weight: 5
 ---
 
-需要V2RayGCon `v1.3.4.3`或以后版本
+需要V2RayGCon `v1.3.4.4`或以后版本
 
 调用外部程序示例
 ```lua
@@ -14,38 +14,29 @@ proc = Sys:Run("cmd.exe", nil, stdin)
 Sys:WaitForExit(proc)
 ```
 
+
 互发信件示例（开2个窗口，同时运行以下脚本）
 ```lua
-local name = "Alex"
-local address = "Bob"
+local from = "Alex"
+local to = "Bob"
 
-local Utils = require "libs.utils"
-
-local mailbox = Sys:CreateMailBox(name)
+local mailbox = Sys:CreateMailBox(from)
 if mailbox == nil then
-    name, address = address, name
-    mailbox = Sys:CreateMailBox(name)
+    from, to = to, from
+    mailbox = Sys:CreateMailBox(from)
 end
+assert(mailbox ~= nil)
 
-function CheckMail()
-    if mailbox:Count() < 1 then
-        mailbox:Send(address, "1")
-        print("Say hello to ", address)
-    else
-        local mail = mailbox:Check()
-        if mail ~= nil then
-            local c = mail:GetHeader()
-            print(mail:GetAddress() , " said ", c) 
-            local r = Utils.ToNumber(c) + 1
-            mailbox:Reply(mail, tostring(r))
-        end
+mailbox:Send(to, 1)
+repeat
+    local mail = mailbox:Wait()
+    if mail ~= nil then
+        local code = mail:GetCode()
+        print(mail:GetAddress() , " said ", code)
+        Misc:Sleep(800)
+        mailbox:Reply(mail, code + 1)
     end
-end
-
-while not Signal:Stop() do
-    CheckMail()
-    Misc:Sleep(1000)
-end
+until mail == nil
 ```
-
-
+小朋友，你是否有很多问号？  
+这个功能大概可以用来写些c/s结构的脚本（们）。  
