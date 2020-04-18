@@ -5,12 +5,12 @@ draft: false
 weight: 5
 ---
 
-需要V2RayGCon `v1.3.4.4`或以后版本
+需要V2RayGCon `v1.3.5.0`或以后版本
 
 ##### `Sys:Run()`用法示例
-假设`trojan.exe`位于`V2RayGCon/trojan/`文件夹中。
 ```lua
--- 设定文件位置
+-- 假设trojan的位置是V2RayGCon/trojan/trojan.exe
+
 local trojan = "trojan/trojan.exe"
 local args = "-c trojan/config.json"
 
@@ -38,14 +38,14 @@ if mailbox == nil then
 end
 assert(mailbox ~= nil)
 
-mailbox:Send(to, 1)
+mailbox:SendCode(to, 1)
 repeat
     local mail = mailbox:Wait()
     if mail ~= nil then
         local code = mail:GetCode()
         print(mail:GetAddress() , " said ", code)
         Misc:Sleep(800)
-        mailbox:Reply(mail, code + 1)
+        mailbox:ReplyCode(mail, code + 1)
     end
 until mail == nil
 ```
