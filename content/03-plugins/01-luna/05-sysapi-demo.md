@@ -53,34 +53,30 @@ until mail == nil
 
 ##### `modules.hotkey` 自定义热键 (`v1.3.6.0+`)
 基本步骤是先用`Reg`把快捷键和某个函数绑定  
-然后按需选`Check()`轮询或`Wait()`阻塞等待按键消息  
+然后按需选 `Check()`轮询 或者 `Wait()`阻塞 等待按键消息  
 ```lua
 local HotKey = require "modules.hotkey"
+    
+local hkCfgs = {
+    {"D5", function() Sys:Run("notepad.exe") end},
+    {"D6", function() Sys:Run("cmd.exe") end},
+    {"D7", function() Sys:Run("mspaint.exe") end},
+}
 
-function Main()
-    local kfs = {
-        { "D5", function() print("5") end},
-        { "D6", function() print("6") end},
-        { "D7", function() print("7") end},
-    }
-    
-    local hk = HotKey()
-    for idx, kf in ipairs(kfs) do
-        if not hk:Reg(kf[1], kf[2], true, true, false) then
-            assert(false, "注册热键[" .. kf[1] .. "]失败")
-        end
+local hkMgr = HotKey()
+for index, hkCfg in ipairs(hkCfgs) do
+    if not hkMgr:Reg(hkCfg[1], hkCfg[2], true, true, false) then
+        local msg = "注册热键[" .. hkCfg[1] .. "]失败"
+        assert(false, msg)
     end
-    
-    while not Signal:Stop() do
-        if not hk:Wait(1500) then
-            print("请按Ctrl + Alt + 5, 6 或 7")
-        end
-    end
-    hk:Destroy()
-    print("done")
 end
 
-Main()
+while not Signal:Stop() do
+    if not hkMgr:Wait(1500) then
+        print("请按 Ctrl + Alt + 5 或 6 或 7")
+    end
+end
+hkMgr:Destroy()
 ```
 其实`modules.hotkey`只是对`Sys`库中的`Sys:RegisterHotKey(...)`等几个函数简单包装了一下。  
-如果你想硬核一点可以直接使用`Sys`库中的函数。具体代码看`lua/modules/hotkey.lua`  
+如果你想硬核一点可以直接使用`Sys`库中的函数。具体代码参考`lua/modules/hotkey.lua`  

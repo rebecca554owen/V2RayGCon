@@ -5,9 +5,11 @@ draft: false
 weight: 1
 ---
 
-##### `v1.3.6.0` (修bug中)
+##### `v1.3.6.0`
+Luna添加是否允许加载CLR库选项  
 Luna将`Json`中的函数移进`Misc`里面  
-Luna的`Sys`库添加几个热键相关的函数(详见手册Sys库最底)  
+Luna的`Sys`库添加热键功能(详见手册Sys库最底)  
+Misc:ShowData()改为返回Json字符串  
 
 ##### `v1.3.5.0`
 快速切换功能的迟延要求改为可选  

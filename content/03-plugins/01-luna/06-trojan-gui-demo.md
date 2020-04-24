@@ -20,6 +20,7 @@ local trExe = "trojan/trojan.exe"
 local trConfigJson = "trojan/config.json"
 
 -- 代码
+local trKey = "local-storage-key-trojan-settings"
 
 import('System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089')
 import('System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a')
@@ -30,15 +31,12 @@ import('System.Drawing.Drawing2D')
 local Utils = require "libs.utils"
 local libJson = require "libs.json"
 
-local trKey = "trojan-settings"
-
 local chkSelfSignedCert
 local tboxServAddr, tboxServPort, tboxServPassword, tboxLocalAddr, tboxLocalPort
 local cboxName
 local btnSave, btnStart, btnStop, btnExit, btnRemove
 
 local servSettings = nil;
-
 local form = nil
 local trojan = nil
 local isExit = false

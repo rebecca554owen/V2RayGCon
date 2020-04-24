@@ -1,5 +1,5 @@
 ---
-title: "选中超时及重复的服务器"
+title: "选中重复服务器"
 date: 2020-02-15T22:47:09+08:00
 draft: false
 weight: 20
