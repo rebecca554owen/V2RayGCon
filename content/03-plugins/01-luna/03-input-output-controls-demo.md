@@ -61,24 +61,15 @@ while again do
 end
 ```
 
-##### ShowData输出控件
+##### ShowData输出控件(v1.3.6.0+)
 ```lua
 -- Misc:ShowData() 示例
 
 local Utils = require "libs.utils"
 
 function Main()
-    local selected = ShowAllServers()
-    if selected ~= nil then
-        ShowResult(selected)
-    end
-end
-
-function ShowResult(rows)
-    print("选中:")
-    for row in Each(rows) do
-        print(row[0] .. "." .. row[1])
-    end
+    local v = ShowAllServers()
+    print(v)
 end
 
 function ShowAllServers()
