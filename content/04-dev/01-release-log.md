@@ -5,7 +5,7 @@ draft: false
 weight: 1
 ---
 
-##### `v1.3.6.0`
+##### `v1.3.6.2`
 Luna添加是否允许加载CLR库选项  
 `Sys`库添加热键功能(详见手册Sys库最底)  
 原`Json`库移进`Misc`并添加`modules.json`模块  
