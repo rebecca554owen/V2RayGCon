@@ -7,8 +7,8 @@ weight: 1
 
 ##### `v1.3.6.0`
 Luna添加是否允许加载CLR库选项  
-Luna将`Json`中的函数移进`Misc`里面  
-Luna的`Sys`库添加热键功能(详见手册Sys库最底)  
+`Sys`库添加热键功能(详见手册Sys库最底)  
+原`Json`库移进`Misc`并添加`modules.json`模块  
 Misc:ShowData()改为返回Json字符串  
 
 ##### `v1.3.5.0`
