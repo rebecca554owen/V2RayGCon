@@ -5,15 +5,15 @@ draft: false
 weight: 1
 ---
 
-##### `v1.3.7.0` (还是有bug继续取消发布)
+##### `v1.3.7.2`  
 Luna添加是否允许加载CLR库选项  
 `Sys`库添加热键功能(详见手册Sys库最底)  
 原`Json`库移进`Misc`并添加`modules.json`模块  
 `Signal`添加`ScreenLocked()`查询屏幕是否处于锁定状态  
-Misc:ShowData()改为返回Json字符串  
+`Misc:ShowData()`改为返回`Json`字符串  
 
 ##### `v1.3.6.2`
-此版本因有界面冻结bug取消发布  
+此版本因存在界面冻结bug取消发布  
 
 ##### `v1.3.5.0`
 快速切换功能的迟延要求改为可选  
