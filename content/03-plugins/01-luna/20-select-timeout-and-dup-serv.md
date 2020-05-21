@@ -6,19 +6,19 @@ weight: 20
 ---
 
 ```lua
-local Set = require "lua.modules.set"
+local Set = require('lua.modules.set')
 
 -- 超时（毫秒）
 local SPEED_TEST_TIMEOUT = 99999
 
 -- 忽略带以下标记的服务器
-local ignoredMarks = Set({
+local ignoredMarks = Set.new({
     "PackageV4",
     "莫挨老子",
 })
 
 -- 重名时优先保留带以下标记的服务器
-local specialMarks = Set({
+local specialMarks = Set.new({
     "VIP",
 })
 

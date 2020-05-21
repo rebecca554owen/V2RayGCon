@@ -5,22 +5,20 @@ draft: false
 weight: 6
 ---
 
-需要V2RayGCon `v1.3.6.0+`
+需要V2RayGCon `v1.3.8.4+`
 
 这个脚本主要演示怎么调用CLR里的Winform库，运行效果大概这样：  
-（运行之后托盘区会多出个的小图标哦！）  
 {{< figure src="../../../images/plugins/trojan_gui.png" >}}  
-  
+注意要钩上`加载CLR库`选项，运行之后托盘区会出现一个的小图标。  
     
 全部代码如下：  
 
 ```lua
--- 假设trojan的位置是V2RayGCon/trojan/trojan.exe
+-- 设置
 local trExe = "trojan/trojan.exe"
 local trConfigJson = "trojan/config.json"
 
 -- 代码
-local trKey = "local-storage-key-trojan-settings"
 
 import('System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089')
 import('System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a')
@@ -31,12 +29,15 @@ import('System.Drawing.Drawing2D')
 local Utils = require "libs.utils"
 local libJson = require "libs.json"
 
+local trKey = "trojan-settings"
+
 local chkSelfSignedCert
 local tboxServAddr, tboxServPort, tboxServPassword, tboxLocalAddr, tboxLocalPort
 local cboxName
 local btnSave, btnStart, btnStop, btnExit, btnRemove
 
 local servSettings = nil;
+
 local form = nil
 local trojan = nil
 local isExit = false
@@ -48,17 +49,11 @@ function Main()
     CreateNotifyIcon()
     ShowForm()
     
-    local count = 0
     local tick = 100
-    local num = 2000 / tick
     while not Signal:Stop() and not isExit do
         Misc:Sleep(tick)
         Application.DoEvents()
-        count = count + 1
-        if count > num then
-            count = 0
-            UpdateIcon()
-        end
+        UpdateIcon()
     end
     
     Cleanup()
@@ -217,6 +212,9 @@ function CreateNotifyIcon()
 end
 
 function Cleanup()
+    if form ~= nil then
+        form:Close()
+    end
     ni.Visible = false
     ni:Dispose()
     StopTrojan()
