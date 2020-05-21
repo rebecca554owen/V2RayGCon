@@ -5,6 +5,8 @@ draft: false
 weight: 20
 ---
 
+需要V2RayGCon `v1.3.8.4`  
+
 ```lua
 local Set = require('lua.modules.set')
 
