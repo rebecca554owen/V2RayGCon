@@ -5,6 +5,14 @@ draft: false
 weight: 1
 ---
 
+##### `v1.4.0.0`  
+Luna界面少量调整  
+添加luasocket、luasec模块  
+添加Sys:CreateHttpServer()、Sys:Volume*()  
+Misc:Choice()支持数字键选取及双击确定  
+托盘菜单可以停止脚本  
+少量其他bug修复  
+
 ##### `v1.3.9.0`
 界面微调  
 
