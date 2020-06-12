@@ -38,7 +38,8 @@ Sys:SetWallpaper(imageFilename)
 print("完成")
 ```
 
-查询百度网盘配额 V2RayGCon `v1.4.1.0+`
+查询百度网盘配额（luasec用法示例）  
+V2RayGCon `v1.4.1.0+`
 ```lua
 local BDUSS = "填入你的BDUSS，网上有教程，很简单的"
 

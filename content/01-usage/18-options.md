@@ -25,9 +25,12 @@ weight: 18
 `优先使用v4格式`是v2ray-core 3.x时代的遗产，现在钩上就是了。  
 测速分页的`大小(KiB)`可以设置为零，此时下载的数据大于0就算作测速成功。  
 
+###### 自定义inbound(默认值分页)
+改写选中了"自定义"选项的服务器的inbounds设置。可以用来实现同时开户http/socks协议，设置http用户名、密码之类的功能。 
 
+###### 多文件配置(分页)
+V2RayGCon `v1.3.1.3+`开始支持v2ray-core `v4.23.1`新增的多文件配置功能。  
 
+用法和[全局import](https://vrnobody.github.io/V2RayGCon/01-usage/17-global-import/)相近，在`选项`窗口的`多配置文件`分页中设定常用的配置文件路径（必须是完整的绝对路径）。然后就可以在`配置编辑器`里面把这些设定插入到`config.json`的`v2raygcon.configs`分节。其中`stdin:`表示当前整个`config.json`。CONFDIR功能可以通过插入`V2RAY_LOCATION_CONFDIR`环境变量来启用。  
 
-
-
-
+提示：各配置文件/文件夹的合并顺序/合并规则是由v2ray-core决定的，注意看日志信息。  
