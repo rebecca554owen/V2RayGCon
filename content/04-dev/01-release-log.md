@@ -5,6 +5,14 @@ draft: false
 weight: 1
 ---
 
+##### `v1.4.1.0`
+添加自定义inbounds选项  
+添加可选v2fly更新源  
+修复了一个磨人的小(死)妖(锁)精  
+修复文件占用引起的v2ray-core更新失败问题  
+主窗口搜索时保留当前的选中状态  
+删除Luna中的`Web:FindAllHrefs()`函数  
+
 ##### `v1.4.0.0`  
 Luna界面少量调整  
 添加luasocket、luasec模块  
