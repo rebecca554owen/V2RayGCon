@@ -26,8 +26,8 @@ import('System.Windows.Forms')
 import('System.Drawing')
 import('System.Drawing.Drawing2D')
 
-local Utils = require "libs.utils"
-local libJson = require "libs.json"
+local Utils = require('lua.libs.utils')
+local libJson = require('lua.libs.json')
 
 local trKey = "trojan-settings"
 

@@ -63,9 +63,7 @@ end
 
 ##### ShowData输出控件(v1.3.6.0+)
 ```lua
--- Misc:ShowData() 示例
-
-local Utils = require "libs.utils"
+local utils = require('lua.libs.utils')
 
 function Main()
     local v = ShowAllServers()
@@ -81,7 +79,7 @@ function ShowAllServers()
             coreState:GetLongName(),
             coreState:GetSummary(),
             coreState:GetMark(),
-            Utils.ToLuaDate(coreState:GetLastModifiedUtcTicks()),
+            utils.ToLuaDate(coreState:GetLastModifiedUtcTicks()),
             coreState:GetStatus(),
         }
         table.insert(rows, row)
