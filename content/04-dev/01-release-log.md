@@ -5,6 +5,10 @@ draft: false
 weight: 1
 ---
 
+##### `v1.4.2.0` (未发布)
+移除Staticstics插件（升级前请先备份数据）  
+添加`解码模板`选项，样板参见`templates/custom/vmessDecodeTemplate.json`  
+
 ##### `v1.4.1.0`
 添加自定义inbounds选项  
 添加可选v2fly更新源  
