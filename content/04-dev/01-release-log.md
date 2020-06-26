@@ -5,9 +5,11 @@ draft: false
 weight: 1
 ---
 
-##### `v1.4.2.0` (未发布)
-移除Staticstics插件（升级前请先备份数据）  
-添加`解码模板`选项，样板参见`templates/custom/vmessDecodeTemplate.json`  
+##### `v1.4.2.0`
+移除Staticstics插件（请先备份数据）  
+流量统计功能整合进主窗口，试验中还有点bug  
+添加`解码模板`选项，样板参见[templates/custom/vmessDecodeTemplate.json](https://raw.githubusercontent.com/vrnobody/V2RayGCon/master/V2RayGCon/Resources/Files/templates/custom/vmessDecodeTemplate.json)  
+添加检查v2ray-core更新选项  
 
 ##### `v1.4.1.0`
 添加自定义inbounds选项  
