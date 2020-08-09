@@ -23,6 +23,38 @@ end
 
  注：上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。如果忘记了可以输入`core:`然后在提示列表中慢慢选。
 
+ 前面所有示例都是通过脚本控制服务器，其实也可以反过来，让脚本响应服务器事件：
+ ```lua
+local coreServ = Server:GetAllServers()[0]
+local title = coreServ:GetCoreStates():GetTitle()
+print(title)
+
+local function OnCoreStart()
+    print("core start: ", title)
+end
+
+local function OnCoreStop()
+    print("core stop: ", title)
+end
+
+-- 把函数和事件绑定在一起
+local hCoreStart = coreServ.OnCoreStart:Add(OnCoreStart)
+local hCoreStop = coreServ.OnCoreStop:Add(OnCoreStop)
+
+-- 启动、关闭第一个服务器时，上面绑定的函数就会执行
+print("waiting")
+while not Signal:Stop() do
+    Misc:Sleep(1000)
+end
+
+-- 记得在脚本结束前解绑
+coreServ.OnCoreStart:Remove(hCoreStart)
+coreServ.OnCoreStop:Remove(hCoreStop)
+print("done")
+ ```
+ 如果脚本执行期间出错导致结束前没解绑，那么绑定的函数在脚本停止后还会被执行。  
+ 所以绑定事件须谨慎！
+
 [1]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/Lua/ILuaSignal.cs "ILuaSignal.cs"
 [2]: https://github.com/vrnobody/V2RayGCon/tree/master/VgcApis/Interfaces/Lua "Interfaces.Lua"
 [3]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/ICoreServCtrl.cs "ICoreServCtrl.cs"
