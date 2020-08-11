@@ -27,7 +27,7 @@ Luna插件提供了`coreState:SetDownlinkTotal(sizeInBytes)`等几个函数，�
 测速分页的`大小(KiB)`可以设置为零，此时下载的数据大于0就算作测速成功。  
 
 ###### 自定义inbound(默认值分页)
-改写选中了"自定义"选项的服务器的inbounds设置。可以用来实现同时开户http/socks协议，设置http用户名、密码之类的功能。 
+用于改写选中了"自定义"选项的服务器的inbounds设置。可以用来实现同时开放http/socks协议，设置http用户名、密码之类的功能。 
 
 ###### 多文件配置(分页)
 V2RayGCon `v1.3.1.3+`开始支持v2ray-core `v4.23.1`新增的多文件配置功能。  
