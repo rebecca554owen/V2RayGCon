@@ -24,22 +24,22 @@ end
 注：上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。如果忘记了可以输入`core:`然后在提示列表中慢慢选。
 
 前面所有示例都是通过脚本控制服务器，其实也可以反过来，让脚本响应服务器事件。    
-需要V2RayGCon `v1.4.2.6+`
+V2RayGCon `v1.4.3+`
  ```lua
 local cev = require('lua.modules.coreEvent').new()
 
 local coreServ = Server:GetAllServers()[0]
 local title = coreServ:GetCoreStates():GetTitle()
 
-function OnCoreStart() print("core start: ", title) end
-function OnCoreStop() print("core stop: ", title) end
+local function OnCoreStart() print("core start: ", title) end
+local function OnCoreStop() print("core stop: ", title) end
 
-cev:Reg(coreServ, OnCoreStart, true)
-cev:Reg(coreServ, OnCoreStop, false)
+cev:RegStartEv(coreServ, OnCoreStart)
+cev:RegStopEv(coreServ, OnCoreStop)
 
 print("server: ", title)
 while not Signal:Stop() do
-   cev:Wait(1000)
+    cev:Wait(1000)
 end
 ```
 
