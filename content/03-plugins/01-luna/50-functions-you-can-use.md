@@ -33,9 +33,11 @@ local title = coreServ:GetCoreStates():GetTitle()
 
 local function OnCoreStart() print("core start: ", title) end
 local function OnCoreStop() print("core stop: ", title) end
+local function OnCorePropertyChanged() print("core property changed: ", title) end
 
-cev:RegStartEv(coreServ, OnCoreStart)
-cev:RegStopEv(coreServ, OnCoreStop)
+cev:RegEvStart(coreServ, OnCoreStart)
+cev:RegEvStop(coreServ, OnCoreStop)
+cev:RegEvPropertyChanged(coreServ, OnCorePropertyChanged)
 
 print("server: ", title)
 while not Signal:Stop() do
