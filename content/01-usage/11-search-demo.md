@@ -8,5 +8,8 @@ weight: 11
 搜索功能演示
 {{< figure src="../../images/forms/demo_search_v1.2.8.4.gif" >}}
 
-编辑功能演示
+简单编辑器演示
+{{< figure src="../../images/forms/demo_simple_editor_v1.4.3.5.gif" >}}
+
+Json编辑器演示
 {{< figure src="../../images/forms/demo_editor_v1.2.8.4.gif" >}}
