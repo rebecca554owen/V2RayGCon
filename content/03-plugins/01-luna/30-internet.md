@@ -6,7 +6,8 @@ weight: 30
 ---
   
 查询百度网盘配额（luasec用法示例）  
-V2RayGCon `v1.4.1.0+`
+系统需已安装 [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) 及 [vc_redist](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)  
+
 ```lua
 local BDUSS = "填入你的BDUSS，网上有教程，很简单的"
 
@@ -88,7 +89,7 @@ index = Misc:Choice("请选择壁纸(点取消结束脚本):", keys, true)
 assert(index > 0)
 Web:Download(bingUrl .. values[index], imageFilename)
 
--- v1.3.4.2+
+-- 仅对 windows 10 有效
 Sys:SetWallpaper(imageFilename)
 
 print("完成")
