@@ -5,6 +5,13 @@ draft: false
 weight: 1
 ---
 
+##### `v1.4.6.0`
+测速过程中遇到错误不再弹出提示窗口  
+更新v2ray-core时不重启插件  
+优化日志窗口刷新算法减少卡顿  
+优化多屏体验  
+Luna添加`Misc:SetSubscriptionConfig(cfgStr)`  
+
 ##### `v1.4.5.0`
 修复v1.4.4出现的界面小概率冻结问题  
 
