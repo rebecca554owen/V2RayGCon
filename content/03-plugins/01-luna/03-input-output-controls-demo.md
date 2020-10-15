@@ -1,5 +1,5 @@
 ---
-title: "输入输出控件演示"
+title: "输入输出控件"
 date: 2020-02-26T13:22:12+08:00
 draft: false
 weight: 3

@@ -1,13 +1,13 @@
 ---
-title: "Trojan示例"
+title: "CLR库示例"
 date: 2020-04-14T17:35:52+08:00
 draft: false
 weight: 6
 ---
 
-需要V2RayGCon `v1.3.8.4+`
+这个示例通过编写一个Trojan客户端来演示怎么调用CLR里的WinForm库。  
 
-这个脚本主要演示怎么调用CLR里的Winform库，运行效果大概这样：  
+运行效果大概这样：  
 {{< figure src="../../../images/plugins/trojan_gui.png" >}}  
 注意要钩上`加载CLR库`选项，运行之后托盘区会出现一个的小图标。  
     

@@ -1,5 +1,5 @@
 ---
-title: "所有函数"
+title: "全部函数"
 date: 2020-02-02T19:13:26+08:00
 draft: false
 weight: 50
@@ -22,46 +22,6 @@ end
  * coreServ的类型是[ICoreServCtrl][3]因函数太多，所以拆成4个模块。通过调用`Get***()`方法选用相应模块。每个模块在[CoreCtrlComponents][5]之中声明。
 
 注：上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。如果忘记了可以输入`core:`然后在提示列表中慢慢选。
-
-前面所有示例都是通过脚本控制服务器，其实也可以反过来，让脚本响应服务器事件。    
-V2RayGCon `v1.4.3+`
- ```lua
-local cev = require('lua.modules.coreEvent').new()
-
-local coreServ = Server:GetAllServers()[0]
-local title = coreServ:GetCoreStates():GetTitle()
-
-local function OnCoreStart() print("core start: ", title) end
-local function OnCoreStop() print("core stop: ", title) end
-local function OnCorePropertyChanged() print("core property changed: ", title) end
-
-cev:RegEvStart(coreServ, OnCoreStart)
-cev:RegEvStop(coreServ, OnCoreStop)
-cev:RegEvPropertyChanged(coreServ, OnCorePropertyChanged)
-
-print("server: ", title)
-while not Signal:Stop() do
-    cev:Wait(1000)
-end
-```
-
-如果你想硬核一点，也可以不用模块，手动绑定事件：
-```lua
-local coreServ = Server:GetAllServers()[0]
-local title = coreServ:GetCoreStates():GetTitle()
-
-function OnCoreStart() print("core start: ", title) end
-local handle = coreServ.OnCoreStart:Add(OnCoreStart)
--- OnCoreStop 同理
-
-print("server: ", title)
-while not Signal:Stop() do
-   Misc:Sleep(1000)
-end
-
--- 记得在脚本结束前解除绑定，不然绑定的函数还会触发
-coreServ.OnCoreStart:Remove(handle)
-```
 
 [1]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/Lua/ILuaSignal.cs "ILuaSignal.cs"
 [2]: https://github.com/vrnobody/V2RayGCon/tree/master/VgcApis/Interfaces/Lua "Interfaces.Lua"
