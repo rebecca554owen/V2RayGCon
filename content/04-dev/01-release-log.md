@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.4.9.0`
+修复偶尔出现的100%~空手接白刃~CPU占用问题（观察中）  
+Luna插件添加Web:ExtractBase64String(text, minLen)函数  
+支持Trojan协议的flow配置项(v2fly PR #334)  
+
 ##### `v1.4.8.0`
 调整简易编辑器，添加serverName配置项  
 服务器大于1024个时改用动态菜单（上一版是2048个）  
