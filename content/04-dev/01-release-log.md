@@ -5,6 +5,9 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.0.0`
+修复一处内存泄漏  
+
 ##### `v1.4.9.0`
 修复偶尔出现的100%~空手接白刃~CPU占用问题（观察中）  
 Luna插件添加Web:ExtractBase64String(text, minLen)函数  
