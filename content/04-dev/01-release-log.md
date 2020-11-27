@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.1.0`
+导入socks协议时，默认关闭mux  
+临时支持xray，将xray.exe解压到core目录内即可  
+到xray不兼容v2ray-core或者GUI发布时将不再支持  
+
 ##### `v1.5.0.0`
 修复一处内存泄漏  
 
