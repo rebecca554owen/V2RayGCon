@@ -5,6 +5,12 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.2.0`
+支持vless0分享链接提案  
+“此服务器日志”在窗口打开后才开始记录日志  
+Luna插件添加Misc:GetSpeedtestQueueLength()函数  
+默认关闭ProxySetter插件（感谢Microsoft Defender） 
+
 ##### `v1.5.1.0`
 导入socks协议时，默认关闭mux  
 临时支持xray，将xray.exe解压到core目录内即可  
