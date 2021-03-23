@@ -5,6 +5,9 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.x (开发中)`
+简易编辑器添加gRPC传输类型  
+
 ##### `v1.5.3.0`
 支持从XTLS/Xray-core更新core  
 修复服务器面板按钮闪烁问题  
