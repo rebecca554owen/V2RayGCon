@@ -100,7 +100,7 @@ haServ:Run()
 ```
 你猜对了！`modules.httpApiServ`又是简单的包装了下`Sys:CreateHttpServer()`  
 
-客户端
+客户端（需要先安装 [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) 及 [vc_redist](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)）
 ```lua
 local url = "http://localhost:4000/"
 

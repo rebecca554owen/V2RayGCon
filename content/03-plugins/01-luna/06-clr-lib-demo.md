@@ -5,7 +5,7 @@ draft: false
 weight: 6
 ---
 
-这个示例通过编写一个Trojan客户端来演示怎么调用CLR里的WinForm库。  
+这个示例通过编写一个启动原版Trojan客户端的小工具，来演示怎么调用CLR里的WinForm库。  
 
 运行效果大概这样：  
 {{< figure src="../../../images/plugins/trojan_gui.png" >}}  

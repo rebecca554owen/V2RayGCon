@@ -5,13 +5,25 @@ draft: false
 weight: 16
 ---
 
-这个软件支持v2rayN的vmess(ver2)链接和标准的ss链接。然后还自创了`v2cfg://...`和`v://...`两种链接。其中`v2cfg://...`是简单的把整个config.json进行base64编码得出，主要用于备份/还原数据。`v://...`又名vee链接，主要特点是短，但编码方式很复杂只是写来玩的。  
+##### ss://...
+仅支持`ss://(base64)#name`形式的分享链接  
 
-vee链接编码原理是把vmess/ss中的数据转成二进制串，然后对其进行base64编码。为了缩短链接长度，不同数据编码方式有所不同。比如server地址如果是域名就当字符串处理，如果是IP则要看是存字符串省空间还是存byte串省空间。对一些常用的字符串比如ss的几种加密方式，vmess的几种streamSettings则通过查表只存下标号。最后还会加点版本信息和校验信息。具体可以看[VeeDecoder.cs][1]不过代码是用Component的方式写的，分得比较散，比较难明白。  
+##### trojan://...
+仅支持[trojan-url](https://github.com/trojan-gfw/trojan-url)定义的分享链接标准（它不包含名字字段，所以导入的时候名字都是空白）  
 
-编码思想出自v2ray-core [issue 1392][2]  
-`v1.2.7.7` vee链接支持v2ray/discussion [#513](https://github.com/v2ray/discussion/issues/513) 中提出的socks协议  
-`v1.2.8.7` vee链接支持http协议  
+##### v://...
+这是本软件自创的一种分享链接。`简易编辑器`里的各种配置组合都可以用这种链接导入、导出。  
+它又叫做vee链接，主要特点是短，编码思想出自v2ray-core [issue 1392][2]。具体实现可以看[VeeDecoder.cs][1]，不过代码是用Component的方式写的，比较散比较乱。  
+
+##### v2cfg://...
+这也是本软件自创的一种分享链接。它直接把整个config.json进行base64编码得出，主要用于备份/还原数据。因为v2ray功能过于强大，有可能被有心人利用，通过revers把本地端口暴露到公网，所以这种链接除了`主窗口`-`文件`-`从剪切板导入`外，其他地方都不能导入。  
+
+##### vless://...
+从`v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
+
+##### vmess://...
+仅支持v2rayN的vmess(ver2)分享链接，不支持其他vmess分享链接  
+
 
 [1]: https://github.com/vrnobody/V2RayGCon/blob/master/V2RayGCon/Services/ShareLinkComponents/VeeDecoder.cs "VeeDecoder.cs"
 [2]: https://github.com/v2ray/v2ray-core/issues/1392 "v2ray-core #1392"

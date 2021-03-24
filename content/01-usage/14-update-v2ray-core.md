@@ -1,5 +1,5 @@
 ---
-title: "更新v2ray-core"
+title: "更新core"
 date: 2020-02-01T17:39:27+08:00
 draft: false
 weight: 14
