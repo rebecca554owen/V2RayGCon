@@ -9,3 +9,5 @@ weight: 3
 
 {{< figure src="../images/forms/form_option_plugins.png" >}}
 
+然后从主窗口（或者托盘图标）的“插件”菜单进入相应插件。  
+{{< figure src="../images/forms/form_main_plugins.png" >}}
