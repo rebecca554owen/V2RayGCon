@@ -5,10 +5,11 @@ draft: false
 weight: 1
 ---
 
-##### `v1.5.4.0 (开发中)`
-添加Xray-core的uTLS指纹配置项  
-支持vmess://...分享链接中的sni及gRPC配置项  
-简易编辑器添加gRPC传输类型  
+##### `v1.5.4.0`
+支持vmess分享链接中的`sni`及`gRPC`配置项  
+`选项`窗口添加uTLS指纹伪装配置项  
+添加`XRAY_BROWSER_DIALER`等几个环境变量  
+`简易编辑器`添加`gRPC`传输类型  
 
 ##### `v1.5.3.0`
 支持从XTLS/Xray-core更新core  
