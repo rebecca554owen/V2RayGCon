@@ -20,6 +20,7 @@ weight: 16
 
 ##### vless://...
 从`v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
+`v1.5.4`支持到`3月7日`的修订，即暂不支持`gRPC`传输类型  
 
 ##### vmess://...
 仅支持v2rayN的vmess(ver2)分享链接，不支持其他vmess分享链接  
