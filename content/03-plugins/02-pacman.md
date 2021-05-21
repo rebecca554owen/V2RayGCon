@@ -14,5 +14,3 @@ weight: 2
 {{< figure src="../../images/plugins/form_main_pkgv4.png" >}}
 
 想知道具体原理可以点开JSON编辑器，查看具体配置。  
-因v2ray-core直到`v4.23.1`还没添加高可用/低延迟之类的负载均衡算法，所以这个功能其实很鸡肋。  
-
