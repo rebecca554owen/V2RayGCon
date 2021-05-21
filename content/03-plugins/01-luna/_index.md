@@ -26,3 +26,6 @@ while not Signal:Stop() do
     Misc:Sleep(1000)
 end
 ```
+
+##### 小技巧
+Luna插件只能在64位系统中使用，如果想在32位系统中使用，需要把`libs/x86/lua53.dll`复制出来，替换掉`libs/lua53.dll`。

@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.5.0`
+修复v2ray-core v4.35.1起出现的测速失败问题  
+Pacman插件添加leastPing均衡策略（需v2ray-core v4.38.0+)  
+Luna插件添加32位dll文件  
+
 ##### `v1.5.4.0`
 支持vmess分享链接中的`sni`及`gRPC`配置项  
 `选项`窗口添加uTLS指纹伪装配置项  

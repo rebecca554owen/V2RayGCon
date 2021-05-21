@@ -11,6 +11,3 @@ weight: 3
 
 然后从主窗口（或者托盘图标）的“插件”菜单进入相应插件。  
 {{< figure src="../images/forms/form_main_plugins.png" >}}
-
-**注意：Luna插件不支持32位系统，只能在64位系统中启用**   
-  
