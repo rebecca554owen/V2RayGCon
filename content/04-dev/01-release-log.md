@@ -5,6 +5,9 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.6.0`(开发中)
+Pacman插件添加将多个服务器串成一条代理链功能  
+
 ##### `v1.5.5.0`
 修复v2ray-core v4.35.1起出现的测速失败问题  
 Pacman插件添加leastPing均衡策略（需v2ray-core v4.38.0+)  
