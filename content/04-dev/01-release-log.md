@@ -5,6 +5,12 @@ draft: false
 weight: 1
 ---
 
+##### `v1.5.8.0`
+修改配置文件存盘方式（测试中，注意多备份）  
+scripts包添加一个SSH端口转发示例脚本  
+Pacman插件添加ProbeURL及ProbeInterval选项  
+Luna插件添加coreCtrl:RunSpeedTestThen()函数  
+
 ##### `v1.5.7.0`
 修复Win7下有些序号显示不全的问题  
 `vless://...`分享链接支持gRPC部分传输模式  
