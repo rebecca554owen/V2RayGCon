@@ -7,6 +7,7 @@ weight: 16
 
 ##### ss://...
 仅支持`ss://(base64)#name`形式的分享链接  
+`v1.5.8.8`起支持导入SIP002链接  
 
 ##### trojan://...
 仅支持[trojan-url](https://github.com/trojan-gfw/trojan-url)定义的分享链接标准（它不包含名字字段，所以导入的时候名字都是空白）  
