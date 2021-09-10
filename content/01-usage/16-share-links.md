@@ -20,8 +20,9 @@ weight: 16
 这也是本软件自创的一种分享链接。它直接把整个config.json进行base64编码得出，主要用于备份/还原数据。因为v2ray功能过于强大，有可能被有心人利用，通过revers把本地端口暴露到公网，所以这种链接除了`主窗口`-`文件`-`从剪切板导入`外，其他地方都不能导入。  
 
 ##### vless://...
-从`v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
+`v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
 `v1.5.4`支持到`3月7日`的修订，即暂不支持`gRPC`传输类型  
+`v1.5.6.1`起支持`gRPC`的`gun`及`multi`模式，不支持`guna`模式  
 
 ##### vmess://...
 仅支持v2rayN的vmess(ver2)分享链接，不支持其他vmess分享链接  
