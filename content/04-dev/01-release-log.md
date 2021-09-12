@@ -5,8 +5,8 @@ draft: false
 weight: 1
 ---
 
-##### `v1.5.9.0`
-支持使用web-safe编码的订阅  
+##### `v1.5.9.1`
+支持使用web-safe base64编码的订阅  
 支持导入、分享shadowsocks SIP002标准的链接  
 分页菜单添加序号范围  
 导入结果窗口添加进度条  
