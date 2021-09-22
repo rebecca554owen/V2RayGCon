@@ -5,6 +5,15 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.0.0`
+主窗口分页菜单显示实际的序号范围  
+修复服务器较多(4K+)时搜索卡顿及部分菜单无法弹出的问题  
+Luna插件添加Server:Count()  
+Luna插件的coreState添加tag1到3三个自定义标签  
+Luna插件Server.balancerStrategyRandom首字母b改成大写  
+Luna插件Server.balancerStrategyLeastPing首字母b改成大写  
+Scripts包添加“查询服务器所在国家.lua”  
+
 ##### `v1.5.9.1`
 支持使用web-safe base64编码的订阅  
 支持导入、分享shadowsocks SIP002标准的链接  
