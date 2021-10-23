@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.1.0`
+修改import合并规则，合并in(out)bounds中tag相同的项  
+Luna插件添加htmlparser.lua（可以写爬虫了）  
+Scripts包添加“故障转移.lua”  
+
 ##### `v1.6.0.0`
 主窗口分页菜单显示实际的序号范围  
 修复服务器较多(4K+)时搜索卡顿及部分菜单无法弹出的问题  
