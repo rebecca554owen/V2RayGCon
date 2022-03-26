@@ -5,6 +5,12 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.2.0`
+提高导入服务器速度  
+支持trojan链接的remark项  
+托盘图标服务器菜单改为显示标题  
+配置文件部分使用压缩格式  
+
 ##### `v1.6.1.0`
 修改import合并规则，合并in(out)bounds中tag相同的项  
 Luna插件添加htmlparser.lua（可以写爬虫了）  
