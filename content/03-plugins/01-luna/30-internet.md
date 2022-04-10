@@ -70,16 +70,16 @@ imageFilename = "d:/wallpaper.jpg"
 bingUrl = "https://www.bing.com"
 bingApiUrl = bingUrl .. "/HPImageArchive.aspx?format=js&idx=0&n=8&mkt=zh-CN"
 
-json = Web:Fetch(bingApiUrl)
+local libJson = require('lua.libs.json')
 
--- v1.3.6.0+
-jobj = Misc:ParseJObject(json)
+str = Web:Fetch(bingApiUrl)
+jobj = libJson.decode(str)
 
 assert(jobj ~= nil)
 keys = {}
 values = {}
 images = jobj["images"]
-for image in Each(images) do
+for _, image in ipairs(images) do
     table.insert(keys, tostring(image["copyright"]))
     table.insert(values, tostring(image["url"]))
 end
@@ -90,6 +90,5 @@ Web:Download(bingUrl .. values[index], imageFilename)
 
 -- 仅对 windows 10 有效
 Sys:SetWallpaper(imageFilename)
-
 print("完成")
 ```
