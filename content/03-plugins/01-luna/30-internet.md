@@ -5,7 +5,7 @@ draft: false
 weight: 30
 ---
   
-查询百度网盘配额（需要先安装 [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) 及 [vc_redist](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)）
+查询百度网盘配额（需要先安装 [OpenSSL v1.1.1*](https://slproweb.com/products/Win32OpenSSL.html) 及 [vc_redist](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)）
 
 ```lua
 local BDUSS = "填入你的BDUSS，网上有教程，很简单的"
