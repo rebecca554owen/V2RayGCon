@@ -27,30 +27,46 @@ function ListAllServers()
     local servs = Server:GetAllServers()
     for coreServ in Each(servs) do
         local coreState = coreServ:GetCoreStates()
+        local coreCtrl = coreServ:GetCoreCtrl()
         local t = {}
         t["title"] = coreState:GetTitle()
         t["uid"] = coreState:GetUid()
+        t["on"] = coreCtrl:IsCoreRunning()
         table.insert(d, t)
     end
     return json.encode(d)
 end 
+
+function RestartServ(uid)
+    local coreServ = utils.GetFirstServerWithUid(uid)
+    if coreServ ~= nil then
+        local coreCtrl = coreServ:GetCoreCtrl()
+        Server:StopAllServers()
+        coreCtrl:RestartCore()
+        return "ok"
+    end
+    return "unknow uid: " .. uid
+end
+
+function StopServ(uid)
+    local coreServ = utils.GetFirstServerWithUid(uid)
+    if coreServ ~= nil then
+        local coreCtrl = coreServ:GetCoreCtrl()
+        coreCtrl:StopCore()
+        return "ok"
+    end
+    return "unknow uid: " .. uid
+end
 
 function handler(req)
     local j = json.decode(req)
     local op = j["op"]
     if op == "RefreshServs" then
         return ListAllServers()
-    end
-    if op == "RestartServ" then
-        local uid = j["p1"]
-        local coreServ = utils.GetFirstServerWithUid(uid)
-        if coreServ ~= nil then
-            local coreCtrl = coreServ:GetCoreCtrl()
-            Server:StopAllServers()
-            coreCtrl:RestartCore()
-            return "ok"
-        end
-        return "unknow uid: " .. uid
+    elseif op == "RestartServ" then
+        return RestartServ(j["p1"])
+    elseif op == "StopServ" then
+        return StopServ(j["p1"])
     end
     return "unknow req: " .. req
 end
@@ -69,6 +85,14 @@ function GenHTML()
         li:nth-child(odd) {
             background-color: ghostwhite;
         }
+        .round-div {
+            background-color: orange;
+            display: inline-block;
+            color: white;
+            padding: 0px 5px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -77,6 +101,11 @@ function GenHTML()
         <button @click="refreshServs()">Refresh</button>
         <ul style="list-style-type: none;">
             <li v-for="serv in servs" style="padding: 3px;">
+                <div v-if="serv.on"
+                     @click="stopServ(serv.uid)"
+                     class="round-div">
+                     ON
+                </div>
                 {{ serv.title }}
                 <button @click="restartServ(serv.uid)">Restart</button>
             </li>
@@ -110,13 +139,26 @@ function GenHTML()
         data() {
             return {
                 servs: [],
-                resp: false,
             }
         },
         methods: {
-            restartServ(uid) {
+            stopServ(uid) {
+                let that = this
                 let done = function (msg) {
-                    alert(msg)
+                    that.refreshServs()
+                    if(msg != "ok"){
+                        alert(msg)
+                    }
+                }
+                invoke(done, "StopServ", uid)
+            },
+            restartServ(uid) {
+                let that = this
+                let done = function (msg) {
+                    that.refreshServs()
+                    if(msg != "ok"){
+                        alert(msg)
+                    }
                 }
                 invoke(done, "RestartServ", uid)
             },
