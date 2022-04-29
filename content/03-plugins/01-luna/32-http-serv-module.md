@@ -164,7 +164,7 @@ function GenHTML()
             },
             refreshServs() {
                 let that = this
-                that.servs = []
+                // that.servs = []
                 let done = function (content) {
                     let data = JSON.parse(content)
                     if (data.length > 0) {
