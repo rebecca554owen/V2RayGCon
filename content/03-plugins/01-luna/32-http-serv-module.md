@@ -5,8 +5,7 @@ draft: false
 weight: 32
 ---
 
-这个脚本需要用到V2RayGCon v1.6.4.1（未发布）新增的httpServ模块。  
-目前可以手动另存[httpServ.lua](https://raw.githubusercontent.com/vrnobody/V2RayGCon/master/V2RayGCon/Resources/Files/lua/modules/httpServ.lua)到`lua/modules/`目录内。  
+这个脚本需要用到V2RayGCon v1.6.5+新增的httpServ模块。  
 ```lua
 -- 如果4000端口已在使用，可修改为其他端口
 local url = "http://localhost:4000/"
