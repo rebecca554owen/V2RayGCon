@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.6.0`
+提高导入、删除服务器速度  
+调整ProxySetter界面  
+删除coreConfiger:GetHash()  
+
 ##### `v1.6.5.0`
 Luna插件添加httpServ模块  
 修复v1.6.2起可能无法保存服务器信息的bug  
