@@ -13,7 +13,7 @@ weight: 15
 “解码模板”用于修改（仅限）vmess协议的outbounds配置。具体可以参考[vmess outbound模板](https://raw.githubusercontent.com/vrnobody/V2RayGCon/master/V2RayGCon/Resources/Files/templates/custom/vmessDecodeTemplate.json)。  
 
 
-上面的设置仅对新导入的服务器生效，对于已经导入的服务器可以在“设定及二维码”面板中修改Inbound设置。  
+上面的设置仅对新导入的服务器生效，已经导入的服务器可以在“设定及二维码”面板中修改Inbound设置。  
 {{< figure src="../../images/forms/form_settings_and_qrcode.png" >}}
 提示：点击青色的 (h8080) 标签可以快速调出“设定及二维码”窗口。
 
