@@ -6,7 +6,7 @@ weight: 1
 ---
 
 ##### `v1.6.7.0` 
-添加task.lua模块，详见脚本内注释  
+添加lua/modules/task.lua模块，详见脚本内注释  
 Core下载器仅显示v4.x内核  
 更新多个NuGet包  
 
