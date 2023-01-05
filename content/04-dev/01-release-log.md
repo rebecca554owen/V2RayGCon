@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.7.4` 
+更新Newtonsoft.Json至v13.0.2  
+修复Luna插件自动补全的一个bug  
+恢复记录每个服务器各自的日志  
+
 ##### `v1.6.7.0` 
 添加lua/modules/task.lua模块，详见脚本内注释  
 Core下载器仅显示v4.x内核  
