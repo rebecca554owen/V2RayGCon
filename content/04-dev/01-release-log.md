@@ -5,6 +5,11 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.8.0` 
+服务器面板显示Tag1-3（过滤对Tag无效）  
+添加Server:DeleteByUids()函数  
+添加coreState:SetName()函数  
+
 ##### `v1.6.7.4` 
 更新Newtonsoft.Json至v13.0.2  
 修复Luna插件自动补全的一个bug  
