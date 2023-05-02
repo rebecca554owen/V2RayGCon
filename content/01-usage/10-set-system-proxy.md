@@ -11,4 +11,4 @@ weight: 10
 然后可以通过托盘图标的右键菜单快速切换模式  
 {{< figure src="../../images/systray/menu_proxy_setter.png" >}}
 
-此插件更详细的用法请看[ProxySetter使用说明]({{< relref "03-plugins/03-proxysetter.md">}})
+此插件更详细的用法请看[ProxySetter使用说明]({{< relref "03-plugins/03-proxysetter.md" >}})

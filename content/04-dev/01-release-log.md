@@ -5,6 +5,14 @@ draft: false
 weight: 1
 ---
 
+##### `v1.6.9.0`(还没发布)
+修复core下载器无法使用的问题  
+添加Xray-core的reality（仅支持vless和trojan协议）  
+添加一个网页版客户瑞，详见[Web UI]({{< relref "03-plugins/01-luna/40-web-ui.md" >}})  
+修复lua.modules.reader.lua中的一个bug  
+Luna插件添加string.split(), Web:Ping()等多个函数  
+替换随机数生成器  
+
 ##### `v1.6.8.0` 
 服务器面板显示Tag1-3（过滤对Tag无效）  
 添加Server:DeleteByUids()函数  

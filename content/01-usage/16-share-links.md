@@ -11,6 +11,7 @@ weight: 16
 
 ##### trojan://...
 仅支持[trojan-url](https://github.com/trojan-gfw/trojan-url)定义的分享链接标准  
+`v1.6.9` 起支持和`vless://...`相同的各项参数  
 
 ##### v://...
 这是本软件自创的一种分享链接。`简易编辑器`里的各种配置组合都可以用这种链接导入、导出。  
@@ -23,6 +24,7 @@ weight: 16
 `v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
 `v1.5.4`支持到`3月7日`的修订，即暂不支持`gRPC`传输类型  
 `v1.5.6.1`起支持`gRPC`的`gun`及`multi`模式，不支持`guna`模式  
+`v1.6.9`起支持Xray-core的reality  
 
 ##### vmess://...
 仅支持v2rayN的vmess(ver2)分享链接，不支持其他vmess分享链接  
