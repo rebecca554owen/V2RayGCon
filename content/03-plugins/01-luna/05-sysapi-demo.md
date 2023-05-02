@@ -5,6 +5,11 @@ draft: false
 weight: 5
 ---
 
+##### `Sys:Start()`用法示例(`v1.6.9.0+`)
+```lua
+Sys:Start("https://www.baidu.com")
+```
+
 ##### `Sys:Run()`用法示例 (`v1.3.5.0+`)
 ```lua
 -- 假设trojan的位置是V2RayGCon/trojan/trojan.exe
@@ -79,36 +84,3 @@ hkMgr:Destroy()
 如果你想硬核一点可以直接使用`Sys`库中的函数。具体代码参考`lua/modules/hotkey.lua`。  
   
 小技巧：不知道键码（比如上面的 "D5", "D6", "D7"）的时候，可以打开ProxySetter插件来查。  
-
-##### `modules.httpApiServ` 简单web API服务器 (`v1.4.0.0+`)
-服务端
-```lua
-local url = "http://localhost:4000/"
-
-local haServ = require('lua.modules.httpApiServ').new()
-
-local handlers = {
-    ["hello"] = function() return "world" end, 
-    ["goodbye"] = function() haServ:Close() return "bye" end,
-}
-
-local html = "HTML"
-haServ:Create(url, html, handlers)
-
-print("Waiting for connections ...")
-haServ:Run()
-```
-你猜对了！`modules.httpApiServ`又是简单的包装了下`Sys:CreateHttpServer()`  
-
-客户端（需要先安装 [OpenSSL v1.1.1*](https://slproweb.com/products/Win32OpenSSL.html) 及 [vc_redist](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads)）
-```lua
-local url = "http://localhost:4000/"
-
-local http = require('lua.libs.luasocket.socket.http')
-local html = http.request(url)
-print(html)
-local resp = http.request(url, "hello")
-print(resp)
-resp = http.request(url, "goodbye")
-print(resp)
-```
