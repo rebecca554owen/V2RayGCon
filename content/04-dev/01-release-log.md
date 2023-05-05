@@ -5,9 +5,9 @@ draft: false
 weight: 1
 ---
 
-##### `v1.6.9.0`(还没发布)
+##### `v1.6.9.0`
 修复core下载器无法使用的问题  
-添加Xray-core的reality（仅支持vless和trojan协议）  
+支持Xray-core的reality（仅可用于vless和trojan协议）  
 添加一个网页版客户瑞，详见[Web UI]({{< relref "03-plugins/01-luna/40-web-ui.md" >}})  
 修复lua.modules.reader.lua中的一个bug  
 Luna插件添加string.split(), Web:Ping()等多个函数  
