@@ -21,7 +21,7 @@ loadfile(serv)()
 ``` 
 
 项目地址：[https://github.com/vrnobody/WebUI](https://github.com/vrnobody/WebUI)  
-没什么设计天赋，欢迎PR。  
+我没什么设计天赋，欢迎PR。  
 
 旧界面(V2RayGCon v1.6.9.0)  
 {{< figure src="../../../images/luna/web_ui_v0.0.1.png" >}}
