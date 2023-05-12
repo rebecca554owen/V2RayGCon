@@ -5,16 +5,23 @@ draft: false
 weight: 40
 ---
 
-这是一个Web客户端，需要V2RayGCon v1.6.9+  
+这是一个Web客户端，需要V2RayGCon v1.6.9.1+  
 
-大概长这样：  
-{{< figure src="../../../images/luna/web_ui_v0.0.1.png" >}}
+light主题：  
+{{< figure src="../../../images/luna/web_ui_light_v0.0.1.1.png" >}}
+
+dark主题：  
+{{< figure src="../../../images/luna/web_ui_dark_v0.0.1.1.png" >}}
 
 在Luna插件中新建一个脚本，运行以下命令即可：  
 ```lua
 local serv = './lua/webui/server.lua'
-dofile(serv)
-```
+loadfile(serv)()
+-- 也可以传入参数 loadfile(serv)("http://localhost:1234/") 
+``` 
 
-项目地址：  
-[https://github.com/vrnobody/WebUI](https://github.com/vrnobody/WebUI)  
+项目地址：[https://github.com/vrnobody/WebUI](https://github.com/vrnobody/WebUI)  
+没什么设计天赋，欢迎PR。  
+
+旧界面(V2RayGCon v1.6.9.0)  
+{{< figure src="../../../images/luna/web_ui_v0.0.1.png" >}}
