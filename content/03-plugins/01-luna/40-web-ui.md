@@ -5,7 +5,9 @@ draft: false
 weight: 40
 ---
 
-这是一个Web客户端，需要V2RayGCon v1.6.9.1+  
+这是本软件的一个Web界面，需要V2RayGCon v1.6.9.3+  
+项目地址：[https://github.com/vrnobody/WebUI](https://github.com/vrnobody/WebUI)  
+我没什么设计天赋，欢迎PR。  
 
 light主题：  
 {{< figure src="../../../images/luna/web_ui_light_v0.0.1.1.png" >}}
@@ -20,8 +22,5 @@ loadfile(serv)()
 -- 也可以传入参数 loadfile(serv)("http://localhost:1234/") 
 ``` 
 
-项目地址：[https://github.com/vrnobody/WebUI](https://github.com/vrnobody/WebUI)  
-我没什么设计天赋，欢迎PR。  
-
-旧界面(V2RayGCon v1.6.9.0)  
-{{< figure src="../../../images/luna/web_ui_v0.0.1.png" >}}
+Web UI中也可以运行lua脚本：  
+{{< figure src="../../../images/luna/web_ui_luna_print_w.png" >}}
