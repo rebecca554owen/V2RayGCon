@@ -5,6 +5,14 @@ draft: false
 weight: 1
 ---
 
+##### `v1.7.0.0`
+主窗口过滤功能支持tag1-3  
+Luna print()输出多参数时用空格分隔  
+Luna Sys库添加一堆Lua相关函数  
+添加自定义user agent功能  
+添加单击托盘图标时执行自定义命令功能  
+修复lua.modules.writer中的一个bug  
+
 ##### `v1.6.9.0`
 修复core下载器无法使用的问题  
 支持Xray-core的reality（仅可用于vless和trojan协议）  
