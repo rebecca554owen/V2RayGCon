@@ -5,6 +5,10 @@ draft: false
 weight: 1
 ---
 
+##### `v1.7.1.1`
+更新至WebUI v0.0.4  
+调整table.dump()默认递归深度成9  
+
 ##### `v1.7.1.0`
 更新至WebUI v0.0.3  
 scripts包添加查询服务器出入口地区的脚本  
