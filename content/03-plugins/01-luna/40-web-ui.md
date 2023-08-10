@@ -10,12 +10,17 @@ weight: 40
 我没什么设计天赋，欢迎PR。  
 
 #### 使用方法
-在Luna插件中新建一个脚本，运行以下命令，然后打开浏览器。  
+V2RayGCon v1.8+之后WebUI迁移到NeoLuna插件中，在NeoLuna插件中运行以下脚本：  
+```lua
+loadfile('3rd/neolua/webui/server.lua')()
+```
+
+V2RayGCon v1.7.1及以前版本，在Luna插件中运行以下脚本：  
 ```lua
 local url = 'http://localhost:4000/'
 loadfile('./lua/webui/server.lua')(url)
 ``` 
-注：v0.0.3的默认密码是`123456`（发布时忘了删密码，抱歉！）  
+然后在浏览器中访问[http://localhost:4000/](http://localhost:4000/)  
 
 #### light主题：  
 {{< figure src="../../../images/luna/web_ui_light_v0.0.2.0.png" >}}

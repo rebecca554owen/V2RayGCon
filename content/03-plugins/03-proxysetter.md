@@ -2,7 +2,7 @@
 title: "ProxySetter"
 date: 2020-02-01T17:58:23+08:00
 draft: false
-weight: 3
+weight: 40
 ---
 
 简单来说这个插件就是用来修改windows系统“Internet选项”里的代理设定的。  

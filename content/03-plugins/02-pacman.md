@@ -2,7 +2,7 @@
 title: "Pacman"
 date: 2020-02-01T17:46:32+08:00
 draft: false
-weight: 2
+weight: 30
 ---
 
 这个插件用于将多个服务器合并成一个服务器包。
