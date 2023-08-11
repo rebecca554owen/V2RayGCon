@@ -5,6 +5,27 @@ draft: false
 weight: 5
 ---
 
+##### `Sys:SnapCache***()` (`v1.8.0.0+`)
+SnapCache用于在不同脚本之间、Luna和NeoLuna两个插件之间、父子线程之间共享键值对
+```lua
+-- 用Apply申请的SnapCache在申请者脚本结束时自动清理
+local token = Sys:SnapCacheApply()
+-- key的类型是string, value的类型是object所以存什么都可以
+Sys:SnapCacheSet(token, "hello", "world")
+
+-- 知道token的其他脚本可以通过Get获取内容
+local world = Sys:SnapCacheGet(token, "hello")
+```
+
+```lua
+-- 也可以自定义token
+local token = "任意字符串"
+local ok = Sys:SnapCacheCreate(token)
+
+-- 但是用完要手工删除token，不然还会占内存
+Sys:SnapCacheRemove(token)
+```
+
 ##### `Sys:Start()`用法示例(`v1.6.9.0+`)
 ```lua
 Sys:Start("https://www.baidu.com")
@@ -52,7 +73,7 @@ repeat
     end
 until mail == nil
 ```
-小朋友，你是否有很多问号？这个`MailBox`有什么用呢？   
+`v1.8`添加了mailbox:SendAndWait()函数，配合Sys:CreateMailBox(name, capacity)使用，相当于一个golang的channel。  
 
 ##### `modules.hotkey` 自定义热键 (`v1.3.8.4+`)
 基本步骤是先用`Reg`把快捷键和某个函数绑定  

@@ -20,9 +20,25 @@ end
 ```
 其中：  
  * Each()是预定义函数，源码在[LuaPredefinedFunctions.txt][4]文件中
- * coreServ的类型是[ICoreServCtrl][3]因函数太多，所以拆成4个模块。通过调用`Get***()`方法选用相应模块。每个模块在[CoreCtrlComponents][5]之中声明。
+ * coreServ的类型是[ICoreServCtrl][3]，分为4个模块，通过调用`Get***()`方法选用相应模块。每个模块在[CoreCtrlComponents][5]之中声明。
 
-注：上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。如果忘记了可以输入`core:`然后在提示列表中慢慢选。
+上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。V2RayGCon v1.8+引入了一个新的关键字wserv简化各模块调用，例如：
+```lua
+-- 旧写法（重启第1个服务器）
+local coreServ = Server:GetServerByIndex(1)
+local coreState = coreServ:GetCoreStates()
+local coreCtrl = coreServ:GetCoreCtrl()
+local title = coreState:GetTitle()
+print(title)
+coreCtrl:RestartCore()
+
+-- 新写法
+local wserv = Server:GetServerByIndex(1):Wrap()
+local title = wserv:GetTitle()
+print(title)
+wserv:RestartCore()
+```
+Wrap()的作用是把一个coreServ包装成一个wserv，然后可以省掉coreServ:GetCoreStates()这些步骤，直接调用各模块里面的函数。但是这层包装是有性能损耗的，谨慎使用。wserv:Unwrap()可以还原出coreServ。  
 
 [1]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/Lua/ILuaSignal.cs "ILuaSignal.cs"
 [2]: https://github.com/vrnobody/V2RayGCon/tree/master/VgcApis/Interfaces/Lua "Interfaces.Lua"
