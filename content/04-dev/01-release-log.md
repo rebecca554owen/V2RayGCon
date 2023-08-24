@@ -5,6 +5,17 @@ draft: false
 weight: 1
 ---
 
+##### `v1.8.2.0`
+停止发布scripts.zip脚本包  
+删除std.Sys:SetWarnOnExit()  
+主窗口可以输入 #序号 来定位服务器  
+优化主窗口搜索速度  
+NeoLuna插件添加日志窗口  
+添加std.Misc:Notify()托盘气泡消息  
+添加std.Web:ParseHtml()  
+添加std.Sys:PipedPorc***()几个函数  
+用法见3rd/DyFetch项目源码  
+
 ##### `v1.8.1.0`
 新增一个NeoLuna插件（测试中）  
 处理vless://...中的&amp;amp;amp;以及\u0026等奇葩问题  
