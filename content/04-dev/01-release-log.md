@@ -13,7 +13,7 @@ weight: 1
 NeoLuna插件添加日志窗口  
 添加std.Misc:Notify()托盘气泡消息  
 添加std.Web:ParseHtml()  
-添加std.Sys:PipedPorc***()几个函数  
+添加std.Sys:PipedProc***()几个函数  
 用法见3rd/DyFetch项目源码  
 
 ##### `v1.8.1.0`
