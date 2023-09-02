@@ -5,7 +5,7 @@ draft: false
 weight: 50
 ---
 
-前面的示例脚本中像`Signal:Stop()`这样的语句，实际是调用了[ILuaSignal.cs][1]里面的`bool Stop();`在[Interfaces.Lua][2]目录下的所有接口都可以像上面那样调用。例如：`Misc:Sleep(1000)`
+前面的示例脚本中像`Signal:Stop()`这样的语句，实际是调用了[ILuaSignal.cs][1]里面的`bool Stop();`在[Interfaces][2]目录下的所有接口都可以像上面那样调用。例如：`Misc:Sleep(1000)`
 
 控制服务器的脚本，通常从调用`Server:GetAllServers()`函数开始。  
 下面是一个选中所有ws.tls服务器的小脚本：  
@@ -38,10 +38,10 @@ local title = wserv:GetTitle()
 print(title)
 wserv:RestartCore()
 ```
-Wrap()的作用是把一个coreServ包装成一个wserv，然后可以省掉coreServ:GetCoreStates()这些步骤，直接调用各模块里面的函数。但是这层包装是有性能损耗的，谨慎使用。wserv:Unwrap()可以还原出coreServ。  
+Wrap()的作用是把一个coreServ包装成一个wserv，然后可以省掉coreServ:GetCoreStates()这些步骤，直接调用各模块里面的函数。wserv:Unwrap()可以还原出coreServ。这层包装有性能损耗，一方面性能损耗巨大（多用一倍时间），另一方面性能损耗微乎其微（50万次函数调用才多用1秒，因为每次调用只有2ns），所以想用就用吧，不用太在意性能。  
 
-[1]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/Lua/ILuaSignal.cs "ILuaSignal.cs"
-[2]: https://github.com/vrnobody/V2RayGCon/tree/master/VgcApis/Interfaces/Lua "Interfaces.Lua"
+[1]: https://github.com/vrnobody/V2RayGCon/blob/master/3rd/Luna/Interfaces/ILuaSignal.cs "ILuaSignal.cs"
+[2]: https://github.com/vrnobody/V2RayGCon/tree/master/3rd/Luna/Interfaces "Interfaces"
 [3]: https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/ICoreServCtrl.cs "ICoreServCtrl.cs"
-[4]: https://github.com/vrnobody/V2RayGCon/blob/master/Plugins/Luna/Resources/Files/LuaPredefinedFunctions.txt "LuaPredefinedFunctions.txt"
+[4]: https://github.com/vrnobody/V2RayGCon/blob/master/3rd/Luna/Resources/Files/LuaPredefinedFunctions.txt "LuaPredefinedFunctions.txt"
 [5]: https://github.com/vrnobody/V2RayGCon/tree/master/VgcApis/Interfaces/CoreCtrlComponents "CoreCtrlComponents"
