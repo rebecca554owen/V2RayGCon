@@ -5,6 +5,12 @@ draft: false
 weight: 1
 ---
 
+##### `v1.8.3.0`
+修复删除服务器有时失效的bug  
+对较大的服务器配置进行压缩  
+选项窗口可加载第三方外置插件  
+Luna从内置插件移出，预计下个版本停止发布  
+
 ##### `v1.8.2.0`
 停止发布scripts.zip脚本包  
 删除std.Sys:SetWarnOnExit()  

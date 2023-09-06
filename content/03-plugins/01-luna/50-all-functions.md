@@ -38,7 +38,7 @@ local title = wserv:GetTitle()
 print(title)
 wserv:RestartCore()
 ```
-Wrap()的作用是把一个coreServ包装成一个wserv，然后可以省掉coreServ:GetCoreStates()这些步骤，直接调用各模块里面的函数。wserv:Unwrap()可以还原出coreServ。这层包装有性能损耗，一方面性能损耗巨大（多用一倍时间），另一方面性能损耗微乎其微（50万次函数调用才多用1秒，因为每次调用只有2ns），所以想用就用吧，不用太在意性能。  
+Wrap()的作用是把一个coreServ包装成一个[IWrappedCoreServCtrl](https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Interfaces/IWrappedCoreServCtrl.cs)，然后可以省掉coreServ:GetCoreStates()这些步骤，直接调用各模块里面的函数。wserv:Unwrap()可以还原出coreServ。这层包装有性能损耗，一方面性能损耗巨大（多用一倍时间），另一方面性能损耗微乎其微（50万次函数调用才多用1秒，因为每次调用只有2ns），所以想用就用吧，不用太在意性能。  
 
 [1]: https://github.com/vrnobody/V2RayGCon/blob/master/3rd/Luna/Interfaces/ILuaSignal.cs "ILuaSignal.cs"
 [2]: https://github.com/vrnobody/V2RayGCon/tree/master/3rd/Luna/Interfaces "Interfaces"
