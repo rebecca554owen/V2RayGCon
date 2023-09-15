@@ -8,9 +8,5 @@ weight: 11
 搜索功能演示
 {{< figure src="../../images/forms/demo_search_v1.5.8.12.gif" >}}
 
-简易编辑器演示
-{{< figure src="../../images/forms/demo_simple_editor_v1.4.3.5.gif" >}}
-小技巧：点击服务器面板的`修改日期`标签可以快速调出`简易编辑器`  
-
 Json编辑器演示
 {{< figure src="../../images/forms/demo_editor_v1.2.8.4.gif" >}}

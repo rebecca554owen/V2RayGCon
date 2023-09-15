@@ -5,6 +5,12 @@ draft: false
 weight: 19
 ---
 
+##### Text编辑器
+
+`Ctrl F` 调出搜索窗口  
+`Ctrl [` 临时缩小字体  
+`Ctrl ]` 临时放大字体  
+
 ##### Json编辑器
 
 `Ctrl F` 调出搜索窗口  
