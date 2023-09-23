@@ -22,9 +22,13 @@ end
  * Each()是预定义函数，源码在[LuaPredefinedFunctions.txt][4]文件中
  * coreServ的类型是[ICoreServCtrl][3]，分为4个模块，通过调用`Get***()`方法选用相应模块。每个模块在[CoreCtrlComponents][5]之中声明。
 
-上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。V2RayGCon v1.8+引入了一个新的关键字wserv简化各模块调用，例如：
+上面代码使用`coreServ`，`coreState`这么奇怪的变量名是因为这两个关键字有代码提示。还有`coreLogger`，`coreConfiger`两个关键字也有代码提示。  
+  
+V2RayGCon v1.8+引入了一个新的关键字wserv简化各模块调用。  
 ```lua
--- 旧写法（重启第1个服务器）
+-- 重启第1个服务器.lua
+
+-- 旧写法
 local coreServ = Server:GetServerByIndex(1)
 local coreState = coreServ:GetCoreStates()
 local coreCtrl = coreServ:GetCoreCtrl()

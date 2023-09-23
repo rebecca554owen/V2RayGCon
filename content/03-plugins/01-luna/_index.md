@@ -7,7 +7,7 @@ weight: 10
 
 这是一个NLua脚本执行器插件。内置很多管理服务器的函数，可以用lua脚本来自动化管理服务器。  
 
-`v1.8.3`Luna从内置插件移出，`v1.8.4`Luna变成第三方外置插件单独发布。需要到[Releases页面](https://github.com/vrnobody/V2RayGCon/releases)下载Luna-plugin.zip，解压到V2RayGCon目录内才能使用。建议改用[NeoLuna插件]({{< relref "03-plugins/04-neoluna/_index.md" >}})。  
+`v1.8.4`Luna由内置插件变成第三方外置插件并单独发布。需要到[Releases页面](https://github.com/vrnobody/V2RayGCon/releases)下载Luna-plugin.zip，解压到V2RayGCon目录内才能使用。建议改用[NeoLuna插件]({{< relref "03-plugins/04-neoluna/_index.md" >}})。  
 
 ##### 简单脚本演示
 {{< figure src="../../images/luna/luna_v0.4.8_print_v.png" >}}
