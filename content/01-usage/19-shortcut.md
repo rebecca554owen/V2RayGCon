@@ -8,6 +8,7 @@ weight: 19
 ##### Text编辑器
 
 `Ctrl F` 调出搜索窗口  
+`Ctrl K` 格式化json  
 `Ctrl [` 临时缩小字体  
 `Ctrl ]` 临时放大字体  
 

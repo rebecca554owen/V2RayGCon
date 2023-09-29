@@ -5,7 +5,7 @@ draft: false
 ---
 
 V2RayGCon是[v2ray-core][1]的图形(graphic)配置器(configer)。  
-支持的最高v2ray-core版本是`v4.45.2`  
+默认支持xray和v2ray v4.x  
 
 [\[项目主页\]][4] [\[下载地址\]][2] [\[本手册项目主页\]][5]  
 

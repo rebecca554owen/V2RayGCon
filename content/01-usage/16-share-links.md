@@ -23,7 +23,7 @@ weight: 16
 ##### v2cfg://...
 这也是本软件自创的一种分享链接。它直接把整个config.json进行base64编码得出，主要用于备份/还原数据。因为v2ray功能过于强大，有可能被有心人利用，通过revers把本地端口暴露到公网，所以这种链接除了`主窗口`-`文件`-`从剪切板导入`外，其他地方都不能导入。  
 
-`v1.8.5` 起`v2cfg://...`升级到ver2，旧客户端导出的ver1链接可以在新客户端导入，但如果用旧客户端导入ver2链接就会出错。  
+`v1.8.5` 起`v2cfg://...`升级到ver2，旧客户端导出的ver1链接可以在新客户端导入，但如果用旧客户端导入ver2链接就会出错。ver2链接内部还是使用json格式，name字段放服务器名，hash放校验码，config则是完整的服务器配置，序列化后gzip压缩成二进制，最后base64编码成文本。详见[V2Cfg.cs](https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Models/Datas/V2Cfg.cs)  
 
 ##### vless://...
 `v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
