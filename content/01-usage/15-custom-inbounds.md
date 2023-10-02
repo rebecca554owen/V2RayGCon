@@ -7,29 +7,36 @@ weight: 15
 
 选项窗口的`默认值`分页可以修改导入链接的默认配置。
 {{< figure src="../../images/forms/form_option_defaults.png" >}}
-`默认模式`对应`Inbounds`分页的配置名字，软件自带了config, http, socks三种配置，可以自行修改、添加更多配置  
+`默认模式`对应`模板`分页的配置名字，软件自带了config, http, socks三种配置，可以自行修改、添加更多配置  
 `默认core`对应`多内核`分页的配置名字  
 `解码模板`用于修改（仅限）vmess协议的outbounds配置。具体参考[vmess outbound模板](https://raw.githubusercontent.com/vrnobody/V2RayGCon/master/V2RayGCon/Resources/Files/templates/custom/vmessDecodeTemplate.json)  
 
-##### Inbounds(分页)
-{{< figure src="../../images/forms/form_custom_inbound_editor.png" >}}
-上面是http配置模板示例。模板中的`%host%`和`%port%`将会替换成`默认值`分页中的`默认地址`。模板不一定是json，也可以是yaml或者任意text。不过v1.8.5对yaml的支持比较弱鸡，只会简单的替换第一层key。而text类型的模板则直接插入到config的顶部。这样看文字比较抽象，建议自己添加几个不同类型的Inbounds，然后看服务器最终配置。注意模板的类型要和服务器config的类型对应，如果把一个yaml类型的模板应用到一个json类型的config会失效。  
+##### 模板(分页)
+{{< figure src="../../images/forms/form_custom_config_template_editor.png" >}}
+上面是http配置模板示例。合并方式只对json类型的模板生效。其中ByTag的合并规则类似于v2ray的多文件配置。模板中的`%host%`和`%port%`将会替换成`默认值`分页中的`默认地址`。模板不一定是json，也可以是yaml或者任意text。不过目前对yaml的支持比较弱鸡，只会简单的替换第一层key。而text类型的模板则直接插入到config的顶部。这样看文字比较抽象，建议自己添加几个不同类型的模板，然后看服务器最终配置的变化。注意模板的类型要和服务器config的类型对应，如果把一个yaml类型的模板应用到一个json类型的config会失效。  
 
 ##### 最终配置
-Text编辑器里面看到的config是解码分享链接后生成的原始配置。在传给core前需要做点处理。比如，选项窗口中钩选了uTLS，那么就要在config里面添加fingerprint配置项。还有流量统计、自签名证书以及inbound这些设置也要翻译成相应的配置添加到config当中。这样处理之后得到的就是“最终配置”，即传给core的config。  
+Text编辑器里面看到的config是解码分享链接后生成的原始配置。在传给core前需要做点处理。比如，选项窗口中钩选了uTLS，那么就要在config里面添加fingerprint配置项。还有流量统计、自签名证书以及inbound等设置也要转换成相应的配置合并进config里面。这样处理之后得到的就是“最终配置”，即传给core的config。  
 
 ##### 多内核(分页)
 {{< figure src="../../images/forms/form_option_custom_core.png" >}}
-这个软件默认支持xray和v2ray v4.x内核。其他内核可以在`多内核`分页里面添加。上面是一个v2ray v5.x的配置例子。这里配置完成后可以回`默认值`分页选择`默认core`。使用自定义core时，流量统计功能失效。如果需要生成config文件，注意文件名(v5.json)要和命令行参数一致。生成的文件位于软件目录内。为了减少（不知道怎么避免）并发读写同一配置文件时发生冲突，连续写盘间隔设定为3秒。  
+这个软件默认支持xray和v2ray v4.x内核。其他内核可以自行在`多内核`分页里面添加。上面是一个v2ray v5.x的例子。这里配置完成后可以回`默认值`分页选择`默认core`。使用自定义core时，流量统计功能失效。如果需要生成config文件，注意文件名(v5.json)要和命令行参数一致。生成的配置文件(v5.json)位于软件目录内。为了减少（不知道怎么避免）并发读写同一配置文件时发生冲突，连续写盘间隔设定为3秒。  
 
-“环境变量” 可以用逗号分隔多个变量，例如：A=123, B=abc  
-“测速Inb.模板” 对应Inbounds分页里面的配置名字。%host%将替换为127.0.0.1, %port%替换为随机端口。测速时合并到最终配置然后启动core。如果选“无”将生成一个http协议json格式的inbound合并到最终配置。  
+环境变量：  
+可以用逗号分隔多个变量，例如：A=123, B=abc  
+  
+测速模板：  
+测速的原理是启动一个入口为HTTP协议的代理服务器，然后测量通过这个代理去下载网页所用的时间。不同core的入口配置会有差异，所以不能直接套用xray/v2ray的HTTP inbound配置。用户可以通过测速模板来配置合适的HTTP inbound，从而给自定义core测速。配置方式参考软件自带的http模板，测速时%host%将替换为127.0.0.1, %port%替换为随机端口。为了兼容旧版本，测速模板有个“无”选项。它其实是xray/v2ray的HTTP inbound。  
 
 ##### 导入以后修改设置
-上面的设置仅对新导入的服务器生效，已经导入的服务器可以在`设定及二维码`面板中修改相应的设置。  
+上面的设置仅对新导入的服务器生效，已经导入的服务器可以在服务器设置面板中修改相应的设置。  
 {{< figure src="../../images/forms/form_settings_and_qrcode.png" >}}
-提示：点击青色的 (http) 标签可以快速调出`设定及二维码`窗口。
+Inbound和内核名对应选项窗口默认值分页中的默认模式和默认core。  
+模板：用于给服务器添加通用配置。假设我想给某几个服务器添加routing配置，那么就可以在选项窗口里面添加一个名为routing的模板。然后在上面的窗口中点“*模板”按钮，勾选routing模板。添加模板后的配置可以在“最终配置”里面查看。  
 
-同时修改多个服务器时，在钩选多个服务器以后点击“主窗口”-“服务器”-“批量修改”即可。 
+提示：点击青色的 (http) 标签可以快速调出服务器设置窗口。
+
+##### 同时修改多个服务器
 {{< figure src="../../images/forms/form_batch_modify.png" >}}
+钩选多个服务器然后点击“主窗口”-“服务器”-“批量修改”即可。 
 

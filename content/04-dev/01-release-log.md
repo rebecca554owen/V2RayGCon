@@ -5,6 +5,14 @@ draft: false
 weight: 1
 ---
 
+##### `v1.8.6.0`
+删除userSettings.json里面一些过时的配置项  
+Text编辑器里面添加简单编辑器  
+选项窗口Inbounds分页改名为模板分页  
+自定义core添加 环境变量 和 测速模板 配置项  
+提高主窗口响应速度  
+减少并发测速时线程占用数  
+
 ##### `v1.8.5.0`
 删除Json编辑器，简易编辑器，全局Import，多文件配置功能  
 删除config.json里面的v2raygcon分节  
