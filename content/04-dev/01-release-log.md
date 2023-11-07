@@ -5,6 +5,9 @@ draft: false
 weight: 1
 ---
 
+##### `v1.8.7.0`
+更新至WebUI v1.0  
+
 ##### `v1.8.6.0`
 删除userSettings.json里面一些过时的配置项  
 Text编辑器里面添加简单编辑器  

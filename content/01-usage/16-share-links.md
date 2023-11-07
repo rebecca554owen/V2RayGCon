@@ -21,7 +21,7 @@ weight: 16
 注意！`v1.8.4`起不再支持`v://...`链接。  
 
 ##### v2cfg://...
-这也是本软件自创的一种分享链接，主要用于备份、还原数据，目前有两个版本。ver1直接把整个config.json进行base64编码得出。`v1.8.5`起v2cfg://...升级为ver2。它内部使用json格式，序列化后gzip压缩成二进制，最后base64编码成文本，细节见[V2Cfg.cs](https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Models/Datas/V2Cfg.cs)。旧版客户端导出的ver1链接可以在新版客户端导入，但旧版客户端无法导入ver2链接。升级到ver2主要目的是支持yaml等其他配置格式。  
+这也是本软件自创的一种分享链接，主要用于备份、还原数据，目前有两个版本。v1直接把整个config.json进行base64编码得出。`v1.8.5`起v2cfg://...升级为v2。它内部使用json格式，序列化后gzip压缩成二进制，最后base64编码成文本，细节见[V2Cfg.cs](https://github.com/vrnobody/V2RayGCon/blob/master/VgcApis/Models/Datas/V2Cfg.cs)。旧版客户端导出的v1链接可以在新版客户端导入，但旧版客户端无法导入v2链接。升级到v2主要目的是支持yaml等其他配置格式。  
 
 因为v2ray功能过于强大，有可能被有心人利用，通过revers把本地端口暴露到公网，所以v2cfg://...链接除了`主窗口`-`文件`-`从剪切板导入`外，其他地方都不能导入。  
 
@@ -50,6 +50,6 @@ p.s. 这个学院派的标准设想得很美好，然而经过两年多（2023-0
 仅支持v2rayN的vmess(ver2)分享链接，不支持其他vmess分享链接  
 
 
-[1]: https://github.com/vrnobody/V2RayGCon/blob/master/V2RayGCon/Services/ShareLinkComponents/VeeDecoder.cs "VeeDecoder.cs"
+[1]: https://github.com/vrnobody/V2RayGCon/blob/1.8.3/V2RayGCon/Services/ShareLinkComponents/VeeDecoder.cs "VeeDecoder.cs"
 [2]: https://github.com/v2ray/v2ray-core/issues/1392 "v2ray-core #1392"
 

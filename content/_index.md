@@ -5,7 +5,7 @@ draft: false
 ---
 
 V2RayGCon是[v2ray-core][1]的图形(graphic)配置器(configer)。  
-默认支持xray和v2ray v4.x  
+默认支持xray和v2ray v4.x两种内核，你也可以自行添加其他内核。  
 
 [\[项目主页\]][4] [\[下载地址\]][2] [\[本手册项目主页\]][5]  
 
