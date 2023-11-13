@@ -6,8 +6,8 @@ weight: 4
 ---
 
 ##### TUN TAP VPN
-这些类型的inbound对复杂的网络不太友好，比如需要同时访问专用网、内网、外网，短期内(2023-11)不会支持。  
-没有代理设置选项的软件，可以试下：[https://github.com/PragmaTwice/proxinject](https://github.com/PragmaTwice/proxinject)  
+这些类型的inbound对复杂的网络不太友好，比如需要同时访问专用网、内网、外网。  
+建议使用按进程代理的软件：[https://github.com/PragmaTwice/proxinject](https://github.com/PragmaTwice/proxinject)  
 或者通过添加自定义core使用支持tun功能的内核。  
 
 ##### 分组
