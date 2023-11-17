@@ -6,7 +6,7 @@ weight: 1
 ---
 
 ##### `v1.8.8.0`
-ProxySetter添加Tuna分页，支持tun模式，详见手册  
+ProxySetter插件添加Tuna分页，支持tun模式，详见手册  
 模板添加注入选项  
 支持对只有socks协议的自定义core进行测速  
 统一各日志窗口菜单项  
