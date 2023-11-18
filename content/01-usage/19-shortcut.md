@@ -2,7 +2,7 @@
 title: "快捷键"
 date: 2020-02-06T11:05:55+08:00
 draft: false
-weight: 19
+weight: 80
 ---
 
 ##### Text编辑器

@@ -2,7 +2,7 @@
 title: "订阅"
 date: 2020-02-01T16:42:29+08:00
 draft: false
-weight: 12
+weight: 20
 ---
 
 在“选项”窗口里面有个“订阅”页面
