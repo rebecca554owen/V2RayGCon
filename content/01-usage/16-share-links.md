@@ -5,6 +5,12 @@ draft: false
 weight: 60
 ---
 
+##### socks://...
+`v1.8.9`起支持v2rayN的socks://auth@host:port#remark链接  
+auth是把`username:password`进行base64编码得出  
+host如果是IPv6要加中括号  
+remark要需要进行URI encode  
+
 ##### ss://...
 仅支持`ss://(base64)#name`形式的分享链接  
 `v1.5.8.8`起支持导入SIP002链接  
