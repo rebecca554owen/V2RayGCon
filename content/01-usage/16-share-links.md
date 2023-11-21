@@ -9,7 +9,7 @@ weight: 60
 `v1.8.9`起支持v2rayN的socks://auth@host:port#remark链接  
 auth是把`username:password`进行base64编码得出  
 host如果是IPv6要加中括号  
-remark要需要进行URI encode  
+remark需要进行URI encode  
 
 ##### ss://...
 仅支持`ss://(base64)#name`形式的分享链接  
@@ -20,7 +20,6 @@ remark要需要进行URI encode
 `v1.6.9` 起支持和`vless://...`相同的各项参数  
 
 ##### v://...
-
 这是本软件自创的一种分享链接。`简易编辑器`里的各种配置组合都可以用这种链接导入、导出。  
 它又叫做vee链接，主要特点是短，编码思想出自v2ray-core [issue 1392][2]。具体实现可以看[VeeDecoder.cs][1]，不过代码是用Component的方式写的，比较散比较乱。  
 

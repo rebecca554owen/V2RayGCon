@@ -8,7 +8,7 @@ weight: 1
 ##### 搜索功能演示
 {{< figure src="../images/forms/demo_search_v1.5.8.12.gif" >}}
 
-注：搜索框还可以输入 #数字 来定位服务器  
+注：搜索框还可以输入 #数字 按序号定位服务器  
 
 ##### 托盘图标说明
 
@@ -25,7 +25,7 @@ weight: 1
  * 紫色表示当前系统代理为PAC模式
  * 蓝色表示当前系统代理为系统模式
 
-注：启用ProxySetter插件后才可以切换代理模式
+注：启用ProxySetter插件后才可以切换代理模式，tun模式下图标会变成土黄色  
 
 ##### 托盘菜单演示
 {{< figure src="../images/systray/menu_servers.png" >}}
