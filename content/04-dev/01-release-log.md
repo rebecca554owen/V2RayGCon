@@ -5,6 +5,16 @@ draft: false
 weight: 10
 ---
 
+##### `v1.8.9.0`
+支持开启多个V2RayGCon图形界面功能（详见手册：多实例）  
+支持导入socks://...分享链接  
+开启tun模式后托盘图标变成便便色  
+批量修改窗口添加更多可修改项  
+选项窗口支持钩选是否导入vmess/vless链接  
+选项窗口移除vmess解码模板功能  
+服务器设置窗口添加忽略sendThrough注入选项  
+NeoLuna添加std.Web:FetchSocks5()等多个函数  
+
 ##### `v1.8.8.0`
 ProxySetter插件添加Tuna分页，支持tun模式，详见手册  
 模板添加注入选项  
