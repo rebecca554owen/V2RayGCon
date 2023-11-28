@@ -5,7 +5,7 @@ draft: false
 weight: 35
 ---
 
-这里说的多实例不是指同时运行多个服务器，而是v1.8.9+开始支持的同时运行多个V2RayGCon图形界面实例功能。  
+多实例是指v1.8.9+开始支持的同时运行多个V2RayGCon图形界面实例功能。  
 双击V2RayGCon.exe时，默认使用当前目录下的userSettings.json作为配置文件。可以通过命令行参数指定配置文件名，开启更多实例。假设软件安装在c:\vgc\V2RayGCon.exe，那么在cmd执行以下命令：
 ```bash
 c:
