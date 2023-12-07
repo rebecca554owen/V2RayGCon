@@ -5,6 +5,12 @@ draft: false
 weight: 10
 ---
 
+##### `v1.9.0.0`
+支持通过SOCKS5协议更新订阅、升级core等  
+支持解码用户名和密码是明文的socks://...链接  
+优化yaml类型的hy2配置的摘要显示  
+添加std.Web:GetSocksProxyPort()等多个函数  
+
 ##### `v1.8.9.0`
 支持开启多个V2RayGCon图形界面功能（详见手册：多实例）  
 支持导入socks://...分享链接  
