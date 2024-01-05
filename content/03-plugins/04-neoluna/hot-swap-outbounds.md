@@ -7,9 +7,9 @@ weight: 20
 
 V2RayGCon v1.9.1+  
 
-目前想给服务器包添加删除节点，通常要用Pacman插件或者lua脚本重新打包生成配置，然后替换当前服务器的config，接着重启服务器。重启会导致所有连接断开体验不是很好。xray/v2ray支持通过grpc调用api接口来热增删节点。问题是他没提供查询当前节点的方法，同时删除节点永远返回成功"{}"。于是调用api一段时间后，只有上帝和gdb知道core里面究竟还剩下哪些节点。  
+以前想给服务器包添加、删除节点，通常要用Pacman插件或者lua脚本重新打包生成配置，然后替换当前服务器的config并重启。这会导致所有连接断开，体验不是很好。xray/v2ray支持通过grpc调用api接口来热增删节点。但是它没提供查询当前节点的方法，删除节点永远返回成功"{}"。于是调用api一段时间后，只有上帝和gdb知道core里面究竟还剩下哪些节点。  
 
-为了改进core的api体验，于是就有了[Xray-core experimental](https://github.com/vrnobody/Xray-core)这个项目。这个项目fork自Xray-core v1.8.6，修改并添加了一些api命令，使用得热增删节点功能更易用。下面是一个通过调用api把测速结果小于5000ms的节点替换掉第一个服务器outbounds的示例。  
+为了改进core的api体验，于是有了[Xray-core experimental](https://github.com/vrnobody/Xray-core)这个项目。这个项目fork自Xray-core v1.8.6，修改、添加了一些api命令，使用得热增删节点功能更易用。下面是一个通过调用api把测速结果小于5000ms的节点替换掉第一个服务器outbounds的示例。  
 
 先下载修改版xray解压并替换掉原来的xray.exe（也可以配置自定义内核，把修改版xray.exe放到其他文件夹）。  
   
@@ -136,8 +136,7 @@ local function Main()
     -- 调用api把配置包添加到服务器中
     ExecApiCmd(apiPort, "ado", nil, config)
     
-    -- 下面这步可选。
-    -- 把配置写入第一个服务器，服务器重启配置还在
+    -- 把配置包存入第一个服务器
     local wserv = std.Server:GetWrappedServerByIndex(1)
     wserv:SetConfigQuiet(config)
 end
@@ -145,4 +144,4 @@ end
 Main()
 ```
   
-这只是个简单的示例，还可以有更花的玩法。  
+上面只是个简单的示例，还可以有更多玩法。  
