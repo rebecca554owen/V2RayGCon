@@ -5,6 +5,12 @@ draft: false
 weight: 10
 ---
 
+##### `v1.9.2.0`
+修复流量统计失效bug，仅支持默认core默认配置  
+添加std.Misc:SetNotifyIconTag()临时修改托盘标签  
+Pacman插件支持roundRobin均衡策略  
+打包服务器时tag改为agentout+6位数字  
+
 ##### `v1.9.1.0`
 支持热切换outbounds，详见手册  
 
