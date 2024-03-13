@@ -5,6 +5,11 @@ draft: false
 weight: 10
 ---
 
+##### `v1.9.5.0`
+Pacman插件支持leastLoad均衡策略  
+vless/trojan分享链接支持HTTPUpgrade及gRPC的authority参数  
+修复修改配置模板不生效的bug  
+
 ##### `v1.9.4.0`
 移除旧配置格式v2ray v3的支持  
 修复一处内存泄露  
