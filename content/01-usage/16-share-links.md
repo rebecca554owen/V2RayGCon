@@ -30,11 +30,14 @@ remark需要进行URI encode
 
 因为v2ray功能过于强大，有可能被有心人利用，通过revers把本地端口暴露到公网，所以v2cfg://...链接除了`主窗口`-`文件`-`从剪切板导入`外，其他地方都不能导入。  
 
+再补充一个例子，精心设计的"burstObservatory.pingConfig.connectivity"可以用来收集用户信息。"burstObservatory"还可以用来干其他事情。不过"reverse"和"burstObservatory"并不是最危险的配置项，还有破坏力更大的这里就不详说了。其实根本问题不是配置项是否安全，而是配置项不能完全受控于人。所以不要用提供完整配置的订阅源。  
+
 ##### vless://...
 `v1.5.2`起支持Xray-core [issues 91](https://github.com/XTLS/Xray-core/issues/91)提出的vless分享链接标准  
 `v1.5.4`支持到`3月7日`的修订，即暂不支持`gRPC`传输类型  
 `v1.5.6.1`起支持`gRPC`的`gun`及`multi`模式，不支持`guna`模式  
 `v1.6.9`起支持Xray-core的reality  
+`v1.9.5`起支持HTTPUpgrade以及gRPC的authority参数  
 
 p.s. 这个学院派的标准设想得很美好，然而经过两年多（2023-07）实战考验后发现到处是坑  
 
